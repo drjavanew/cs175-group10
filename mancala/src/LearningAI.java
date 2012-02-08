@@ -97,11 +97,11 @@ public class LearningAI {
 			int player = MancalaBoard.getTurn(); 
 			Node evalNode = new Node(MancalaBoard.get(), 0);
 			if (MancalaBoard.getTurn() == Constants.PLAYER2)
-				 moveid = requestMoveRandom();
-//				moveid = MancalaBoard.findBestMove(evalNode);
+//				 moveid = requestMoveRandom();
+				moveid = MancalaBoard.findBestMove(evalNode);
 			else
-				moveid = requestMoveRandom();
-//				moveid = MancalaBoard.BestMove(evalNode);
+//				moveid = requestMoveRandom();
+				moveid = MancalaBoard.BestMove(evalNode);
 
 			if (moveid != -1) {
 //				System.out.println("PLAYER " + ((player % Constants.MAX_SLOTS)+1) + " MOVING FROM " + moveid);
@@ -239,9 +239,9 @@ public class LearningAI {
 	
 	public void runTest () {
 		
-		for (int i = 1; i <= 1000; i++) {
-//			MancalaBoard.PLAYER1_CutOffDepth = newPositive(10);
-//			MancalaBoard.PLAYER2_CutOffDepth = newPositive(10);
+		for (int i = 1; i <= 100000; i++) {
+			MancalaBoard.PLAYER1_CutOffDepth = newPositive(10);
+			MancalaBoard.PLAYER2_CutOffDepth = newPositive(10);
 			MancalaBoard.setTurn(1); // Player 1 first.
 			learn();
 			for (int j=0; j<=1; j++) {
@@ -250,9 +250,9 @@ public class LearningAI {
 			reset();
 		}
 		
-		for (int k = 1; k <= 1000; k++) {
-//			MancalaBoard.PLAYER1_CutOffDepth = newPositive(10);
-//			MancalaBoard.PLAYER2_CutOffDepth = newPositive(10);
+		for (int k = 1; k <= 100000; k++) {
+			MancalaBoard.PLAYER1_CutOffDepth = newPositive(10);
+			MancalaBoard.PLAYER2_CutOffDepth = newPositive(10);
 			MancalaBoard.setTurn(2); // Player 2 first.
 			learn();
 			for (int j=0; j<=1; j++) {
@@ -305,7 +305,7 @@ public class LearningAI {
 		int moveid = 0;
 		MancalaBoard.setTurn(1);
 		while (!(MancalaBoard.isGameEnd())) {
-			MancalaBoard.draw();
+//			MancalaBoard.draw();
 			int player = MancalaBoard.getTurn(); 
 			Node evalNode = new Node(MancalaBoard.get(), 0);
 			if (player == Constants.PLAYER2)
@@ -318,7 +318,7 @@ public class LearningAI {
 
 			//add each move into the history.
 			if (moveid != -1) {
-				System.out.println("PLAYER " + ((player % Constants.MAX_SLOTS)+1) + " MOVING FROM " + moveid);
+//				System.out.println("PLAYER " + ((player % Constants.MAX_SLOTS)+1) + " MOVING FROM " + moveid);
 				MancalaBoard.move(moveid);
 				State  aState = new State(MancalaBoard);
 				addGameHistory(player, aState);
@@ -336,19 +336,19 @@ public class LearningAI {
 		MancalaBoard.setGameState();
 		switch (MancalaBoard.getGameState()) {
 		case Board.WIN_P1:
-			System.out.println("PLAYER 1 WON");
+//			System.out.println("PLAYER 1 WON");
 			rewards[0] = 1;
 			rewards[1] = -1;
 			winCountP1 ++;
 			break;
 		case Board.WIN_P2:
-			System.out.println("PLAYER 2 WON");
+//			System.out.println("PLAYER 2 WON");
 			rewards[0] = -1;
 			rewards[1] = 1;
 			winCountP2 ++;
 			break;
 		case Board.DRAW:
-			System.out.println("DRAW");
+//			System.out.println("DRAW");
 			rewards[0] = 0;
 			rewards[1] = 0;
 			break;
@@ -380,10 +380,43 @@ public class LearningAI {
 			    System.err.println(e);
 		}
 	}
+	
+public void runTestAI () {
+	    reset();
+		winCountP1 =0;
+		winCountP2 =0;
+		for (int i = 1; i <= 100000; i++) {
+//			MancalaBoard.PLAYER1_CutOffDepth = newPositive(10);
+			MancalaBoard.setTurn(1); // Player 1 first.
+			AIplay();
+//			for (int j=0; j<=1; j++) {
+//			learnThetas((double) 1/(50*i),weight[j],GameHistory[j],players[j],rewards[j]);
+//			}
+			reset();
+		}
+		
+		for (int k = 1; k <= 100000; k++) {
+//			MancalaBoard.PLAYER1_CutOffDepth = newPositive(10);
+			MancalaBoard.setTurn(2); // Player 2 first.
+			AIplay();
+//			for (int j=0; j<=1; j++) {
+//				learnThetas((double) 1/(50*k),weight[j],GameHistory[j],players[j],rewards[j]);
+//				}
+			reset();
+		}
+		
+		System.out.println("THETA1");
+		printThetas(weight[0]);
+		
+		System.out.println();
+		System.out.println("THETA2");
+		printThetas(weight[1]);
+	}
+
 	public static void main(String[] args) {
 		LearningAI myAI = new LearningAI("data.txt");
-//		myAI.saveThetas("data.txt");
-		myAI.AIplay();
+//		myAI.saveThetas("");
+		myAI.runTestAI();
 	}
 
 }
