@@ -54,7 +54,7 @@ public class LearningAI {
 		}   
 			 
 		catch (IOException x) {
-			    System.err.println(x);
+				runTest();
 		}
 	}
 	
@@ -239,7 +239,7 @@ public class LearningAI {
 	
 	public void runTest () {
 		
-		for (int i = 1; i <= 100000; i++) {
+		for (int i = 1; i <= 1000; i++) {
 //			MancalaBoard.PLAYER1_CutOffDepth = newPositive(10);
 //			MancalaBoard.PLAYER2_CutOffDepth = newPositive(10);
 			MancalaBoard.setTurn(1); // Player 1 first.
@@ -250,7 +250,7 @@ public class LearningAI {
 			reset();
 		}
 		
-		for (int k = 1; k <= 100000; k++) {
+		for (int k = 1; k <= 1000; k++) {
 //			MancalaBoard.PLAYER1_CutOffDepth = newPositive(10);
 //			MancalaBoard.PLAYER2_CutOffDepth = newPositive(10);
 			MancalaBoard.setTurn(2); // Player 2 first.
