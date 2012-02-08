@@ -17,7 +17,8 @@ public class Board {
 
 	int turn; // Options: PLAYER1, PLAYER2
 	int gameState; // Options: WIN_P1, WIN_P2, DRAW, PLAYING
-	static int PLAYER1_CutOffDepth;
+	
+	static int PLAYER1_CutOffDepth; //??
 	static int PLAYER2_CutOffDepth;
 
 	/**
@@ -39,7 +40,12 @@ public class Board {
 		slots[PLAYER2] = 0; // This is player 2's mancala store.
 	}
 
-	/* Constructor 2 - Copy constructor */
+	/* 
+	 * Constructor 2 - Copy constructor
+	 * 
+	 * This constructor takes in a parameter Board and copies it.
+	 * It is used to copy the current game board to perform look-aheads.
+	 */	
 	public Board(Board aBoard) {
 
 		gameState = aBoard.getGameState();
@@ -50,6 +56,7 @@ public class Board {
 		turn = aBoard.getTurn();
 	}
 
+	
 	/* Accessor Methods */
 	public int getSlotValue(int i) {
 		return slots[i];
@@ -77,6 +84,7 @@ public class Board {
 		return 1;
 	}
 
+	/* Checks if the game has ended. */
 	public boolean isGameEnd() {
 		int i = checkEmptySide(turn);
 		if (i == 0) {
@@ -98,28 +106,8 @@ public class Board {
 			return true;
 		}
 	}
-/*	public boolean isGameEnd() {
-		int i = checkEmptySide(turn);
-		if (i == 0) {
-			int j = checkEmptySide(inverse(turn));
 
-			if (j == 1) { // game end - empty on the other side
-				collectStones(turn);
-				return true;
-			}
-
-			else {
-				return false;
-			}
-		}
-
-		else { // game end - empty on our side
-			collectStones(turn);
-			collectStones(inverse(turn));
-			return true;
-		}
-	}*/
-
+	
 	public boolean isLegalMove(int id) {
 
 		if ((id == PLAYER1) || (id >= PLAYER2) || (slots[id] == 0))
@@ -138,6 +126,7 @@ public class Board {
 
 	}
 
+	/* Return the value of the other player. */
 	private int inverse(int player) {
 		if (player == PLAYER1)
 			return PLAYER2;
@@ -145,6 +134,7 @@ public class Board {
 			return PLAYER1;
 	}
 
+	/* Add all stones on respective sides together. */
 	private void collectStones(int player) {
 		for (int i = 1; i <= MAX_SLOTS; i++) {
 			slots[player] += slots[player - i];
@@ -152,6 +142,7 @@ public class Board {
 		}
 	}
 
+	
 	public void setGameState() {
 		if (isGameEnd()) {
 			collectStones(turn);
@@ -171,16 +162,16 @@ public class Board {
 		}
 	}
 
-	public void move(int id) {
+	public void move(int move) {
 		// id MUST BE legal move already
 
-		int i = id;
-		while (slots[id] > 0) {
+		int i = move;
+		while (slots[move] > 0) {
 			i++;
 			i = i % (MAX_SLOTS * 2 + 2);
 			if (i != inverse(turn)) {
 				slots[i]++;
-				slots[id]--;
+				slots[move]--;
 			}
 		}
 
@@ -258,59 +249,6 @@ public class Board {
 		return i;
 	}
 
-	
-//	public void playGame(){
-//		int i=0; 
-//		int moveid=0; 
-//		BufferedReader in=new  BufferedReader(new InputStreamReader(System.in));
-//	  
-//	  do { 
-//		  System.out.println("ENTER -1 to quit - PICK WHO GO FIRST 1 or 2");
-//	  try { 
-//		  i = Integer.parseInt(in.readLine()); 
-//		  } 
-//	  catch (IOException e) { 
-//		  //  TODO Auto-generated catch block 
-//		  e.printStackTrace(); 
-//		  } 
-//	  if (!((i ==1) || (i==2))) 
-//		  System.out.println("PICK ONLY 1 or 2!!!"); 
-//	  } while (!((i ==1) ||	  (i==2)));
-//	  
-//	  setTurn(1); //Player 1 goes first.
-//	  
-//	  while (!(isGameEnd())) { 
-//		  draw(); 
-//		  if (turn == PLAYER1) { 
-//			  moveid =	  requestMove(); 
-//			  } 
-//		  else { 
-//			  Node evalNode = new Node(this, 0); 
-//			  moveid =  findBestMove(evalNode); 
-//			  } 
-//		  if (moveid != -1) {
-//			  System.out.println("MOVING FROM " + moveid); 
-//			  move(moveid); 
-//			  }
-//	  
-//	  else break; 
-//		  }
-//	  
-//	  setGameState(); 
-//	  switch (getGameState()){ 
-//	  case WIN_P1:
-//		  System.out.println("PLAYER 1 WON"); 
-//		  break; 
-//	  case WIN_P2:
-//		  System.out.println("PLAYER 2 WON"); 
-//		  break; 
-//	  case DRAW:
-//		  System.out.println("DRAW"); 
-//		  break; 
-//	  default:
-//		  System.out.println("Something is wrong!"); 
-//		  break; } 
-//	  }
 	 
 
 	public static int findBestMove(Node currentNode) {
