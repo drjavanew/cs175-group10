@@ -1,12 +1,18 @@
 public class State {
 
-	private int[] holes = new int[Constants.MAX_SLOTS * 2 + 2];
+	private int[] holes = new int[Constants.MAX_SLOTS * 2 + 2]; //12+2
 
 	public State(Board aBoard) {
 		for (int i = 0; i < holes.length; i++) {
 			holes[i] = aBoard.getSlotValue(i);
 		}
 	}
+	
+
+	
+	
+	
+	
 
 	/*
 	 * H1: (My Mancala – Opponent’s Mancala) 8 

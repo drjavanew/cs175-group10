@@ -4,24 +4,29 @@ import java.io.*;
 public class LearningAI {
 
 	private static Board MancalaBoard;
-	private double[][] weight = { {0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0}};
+	private double[][] weight = { {0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0}}; //why so big?
 	private int[] rewards = new int[2];
 	
 	private int winCountP1=0;
 	private int winCountP2=0;
 	
-	private Vector[] GameHistory = new Vector[2]; //only records 2 games.
+	private Vector[] GameHistory = new Vector[2]; 
 	private int[] players = { Constants.PLAYER1, Constants.PLAYER2 };
 	
+	/* Constructor 1
+	 * 
+	 */
 	public LearningAI() {
 		MancalaBoard = new Board();
-		GameHistory[0] = new Vector<State>();
+		GameHistory[0] = new Vector<State>(); //list of states.
 		GameHistory[1] = new Vector<State>();
 		runTest();
 
 	}
 
-	/* This constructor takes in a filename and reads in the weight values of a
+	/* Constructor 2
+	 * 
+	 * This constructor takes in a filename and reads in the weight values of a
 	 * previous record.
 	 */
 	public LearningAI(String filename) {
@@ -82,8 +87,6 @@ public class LearningAI {
 		return i;
 	}
 
-	
-	
 	public void learn() {
 
 		int moveid = 0;
@@ -162,43 +165,46 @@ public class LearningAI {
 	
 	
 	public void learnThetas (double learning_rate, double[] thetasValue, Vector<State> history, int player, int reward) {
-		int i = 0;
+
 		double[] copy = new double[thetasValue.length];
 		copyArr(thetasValue,copy);
+		
+		int i = 0;
 		while (i<7) {
-		double sumAll = 0;
-		double sumTotal =0;
-		Iterator<State> it = history.iterator();
-		while (it.hasNext()) {
-			State aState = it.next();
-			sumAll = calStateValue (copy, aState, player);
-			sumAll -= reward;
 			
-			switch (i) {
-			case 0:
-				sumTotal = sumAll * 1;
-				break;
-			case 1:
-				sumTotal = sumAll * aState.getFeature1(player);
-				break;
-			case 2:
-				sumTotal = sumAll * aState.getFeature2(player);
-				break;
-			case 3:
-				sumTotal = sumAll * aState.getFeature3(player);
-				break;
-			case 4:
-				sumTotal = sumAll * aState.getFeature4(player);
-				break;
-			case 5:
-				sumTotal = sumAll * aState.getFeature5(player);
-				break;
-			case 6:
-				sumTotal = sumAll * aState.getFeature6(player);
-				break;
+			double sumAll = 0;
+			double sumTotal = 0;
 			
-			}
-		}
+			Iterator<State> it = history.iterator();	
+			while (it.hasNext()) {
+				State aState = it.next();
+				sumAll = calStateValue (copy, aState, player);
+				sumAll -= reward;
+
+				switch (i) {
+				case 0:
+					sumTotal = sumAll * 1;
+					break;
+				case 1:
+					sumTotal = sumAll * aState.getFeature1(player);
+					break;
+				case 2:
+					sumTotal = sumAll * aState.getFeature2(player);
+					break;
+				case 3:
+					sumTotal = sumAll * aState.getFeature3(player);
+					break;
+				case 4:
+					sumTotal = sumAll * aState.getFeature4(player);
+					break;
+				case 5:
+					sumTotal = sumAll * aState.getFeature5(player);
+					break;
+				case 6:
+					sumTotal = sumAll * aState.getFeature6(player);
+					break;
+				} //end switch
+			} //end inner while
 		
 			thetasValue[i] = copy[i] - learning_rate*((double) 1/history.size())* sumTotal;
 			i++;
@@ -232,6 +238,7 @@ public class LearningAI {
 	}
 	
 	public void runTest () {
+		
 		for (int i = 1; i <= 100000; i++) {
 //			MancalaBoard.PLAYER1_CutOffDepth = newPositive(10);
 //			MancalaBoard.PLAYER2_CutOffDepth = newPositive(10);
@@ -242,6 +249,7 @@ public class LearningAI {
 			}
 			reset();
 		}
+		
 		for (int k = 1; k <= 100000; k++) {
 //			MancalaBoard.PLAYER1_CutOffDepth = newPositive(10);
 //			MancalaBoard.PLAYER2_CutOffDepth = newPositive(10);
@@ -308,6 +316,7 @@ public class LearningAI {
 //				moveid = MancalaBoard.BestMove(evalNode);
 //				moveid = MancalaBoard.requestMove();
 
+			//add each move into the history.
 			if (moveid != -1) {
 				System.out.println("PLAYER " + ((player % Constants.MAX_SLOTS)+1) + " MOVING FROM " + moveid);
 				MancalaBoard.move(moveid);

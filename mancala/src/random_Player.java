@@ -1,53 +1,96 @@
-import java.util.Random;
-public class random_Player implements MancalaPlayer
-{
-private int player;
+/*
+ * author: William Lam
+ * author: Andrew Furusawa
+ * 
+ * class name: random_Player
+ * description: 
+ */
 
-public random_Player (int playerNum) {
-  player = playerNum;
-}
+public class random_Player implements MancalaPlayer {
+	
+	private int player;
+	private int opponent;
+	
+	RegressionLearning ai;
 
-public int getMove(MancalaGameState gs) throws Exception {
-  MancalaGameState gs_copy=gs.copy();
-  player = gs_copy.CurrentPlayer();
-  Random generator = new Random();
-  int move = -1;  
+	public random_Player (int playerNum) {
+	  player = playerNum;
+	  opponent = 1 - player;
+	  
+	  ai = new RegressionLearning();
+	  //load theta values.
+	  
+	}
+	
+	public int getMove(MancalaGameState gs) throws Exception {
 
-  for (int m=0;m<gs_copy.cols();m++) {
-    if (gs_copy.validMove(m)) {
-      if (move==-1) move=m;            // At least keep track of a valid move
-      gs_copy.play(m);                    // Try playing that move on the current board
-      if (gs_copy.checkEndGame()) {                //  If we win, definitely do that.
-          gs_copy.computeFinalScore();
-          if (gs_copy.getScore(player) > gs_copy.getScore(1-player)) {
-              return m;   
-          }
-      } else {                         //  If it didn't win, "maybe" save it as our
-        if (generator.nextInt(2)==0)   //   best move so far.
-          move=m;
-      }
-    }
-    gs_copy = gs.copy();
-  }
-  System.out.println(move);
-  return move;   // Tell the game what our final decision is.
-}
-
-public Object postGameActions(MancalaGameState gs) {
-    if (!gs.checkEndGame()) return null;
-
-    // Make a copy to compute the final score
-    MancalaGameState gsCopy = gs.copy();
-    gsCopy.computeFinalScore();
-
-    if (gsCopy.getScore(player) > gsCopy.getScore(1-player))
-        System.out.println("I randomly win!");
-    else if (gsCopy.getScore(player) < gsCopy.getScore(1-player)) 
-        System.out.println("I randomly lost...");
-    else 
-        System.out.println("I randomly tied.");
-
-    return null;
-}
+		
+		//int offset = player - Constants.PLAYER1;
+		double max = Float.NEGATIVE_INFINITY;
+		int bestMove = -1;
+		
+		for (int i = 0; i < 6; i++) {
+			
+			if (gs.validMove(i)) {
+				
+				//copy board and values given you execute the move.
+				MancalaGameState newBoard = gs.copy();
+				newBoard.play(i);
+				
+				
+				RegressionState newState = new RegressionState(newBoard, player);
+				
+				//calculate the state value for each slot and take the best one.
+				double stateValue = calStateValue(weight[player%Constants.PLAYER1], newState);
+				if (stateValue > max) {
+					max = stateValue;
+					bestMove = i;
+				}
+			}
+		}
+		
+		
+		if (bestMove != -1) {
+			MancalaGameState newBoard = gs.copy();
+			newBoard.play(bestMove);
+			updateHistory(state);
+		}
+		
+		
+		 
+		return bestMove;
+	
+	}
+	
+	
+	/* This method will be used to learn from the game we just played. */
+	public Object postGameActions(MancalaGameState gs) {
+	    if (!gs.checkEndGame()) return null;
+	
+	    // Make a copy to compute the final score
+	    MancalaGameState gsCopy = gs.copy();
+	    gsCopy.computeFinalScore();
+	    
+		
+		
+		ai = new RegressionLearning(gs, player);
+		
+		
+		
+	
+	    if (gsCopy.getScore(player) > gsCopy.getScore(opponent)) {
+	        System.out.println("I win!");    	
+	    }
+	
+	    else if (gsCopy.getScore(player) < gsCopy.getScore(opponent)) {
+	        System.out.println("I lost...");
+	    }
+	    
+	    else {
+	        System.out.println("I tied.");
+	    }
+	
+	    return null;
+	}
 
 }
