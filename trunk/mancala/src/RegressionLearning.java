@@ -54,8 +54,9 @@ public class RegressionLearning {
 	 * This constructor takes in a filename and reads in the weight values of a
 	 * previous record.
 	 */
-	public RegressionLearning(String filename) {
-		
+	public RegressionLearning(int playerNum, String filename) {
+		player = playerNum;
+		cutoffDepth = 8;
 			//read and set weights of each feature from a file.
 			try {
 				String sCurrentLine;
@@ -71,6 +72,7 @@ public class RegressionLearning {
 			}   
 				 
 			catch (IOException x) {
+				System.err.println("Err");
 //					runTest();
 			}
 		}
