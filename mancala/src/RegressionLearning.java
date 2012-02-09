@@ -5,7 +5,13 @@
  * description: 
  */
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Vector;
 
 
@@ -22,7 +28,8 @@ public class RegressionLearning {
 	private static final int TOTAL_FEATURES = 6+1;
 	
 	int player;
-	
+	int reward;
+	static int cutoffDepth;
 	/*
 	 * Game History contains each state of a turn within a single game.
 	 */
@@ -39,7 +46,36 @@ public class RegressionLearning {
 	
 	public RegressionLearning() {
 		
+		
 	}
+	
+	/* Constructor 2
+	 * 
+	 * This constructor takes in a filename and reads in the weight values of a
+	 * previous record.
+	 */
+	public RegressionLearning(String filename) {
+		
+			//read and set weights of each feature from a file.
+			try {
+				String sCurrentLine;
+			 
+				BufferedReader br = new BufferedReader(new FileReader(filename));
+				int i=0;
+				
+				while ((sCurrentLine = br.readLine()) != null) {
+					weight[i] =	Double.parseDouble(sCurrentLine);
+					i++;
+				}			
+				br.close();	    
+			}   
+				 
+			catch (IOException x) {
+//					runTest();
+			}
+		}
+	
+	
 	
 	/* Constructor */
 	public RegressionLearning(MancalaGameState board, int player) {
@@ -53,6 +89,8 @@ public class RegressionLearning {
 		
 		state = new RegressionState(board, player);
 	}
+	
+	
 	
 	/*
 	 * LINEAR REGRESSION METHODS.
@@ -68,17 +106,78 @@ public class RegressionLearning {
 		return sum;
 	}
 	
+	
 	/* Returns the square of error value. */
 	public int errorValue(int result) {
 		return 1;
 	}
 	
+	public void saveThetas(String filename) {
+		try {
+			
+			String s;
+			BufferedWriter bw = new BufferedWriter(new FileWriter(filename));
+			for (int j=0; j < weight.length; j++) {
+					s = String.valueOf(weight[j])+ "\n";
+					bw.write(s);
+			}
+			
+			bw.close();
+			    
+		}   
+			 
+		catch (IOException e) {
+			    System.err.println("RegressionLearning - saveThetas");
+		}
+	}
+	
+	public void copyArr (double[] original, double[] copy) {
+		for (int i = 0; i<original.length; i++) {
+			copy[i] = original[i]; 
+		}
+	}
+	
 	/* calculate the gradient descent. */
-	public int gradientDescent(double stepsize, double[] weight, Vector<State> history, int player, int resultValue) {
-		return 1;
+	public void gradientDescent(double stepsize, int resultValue) {
+		
+		double[] copy = new double[TOTAL_FEATURES];
+		copyArr(weight,copy);
+		
+		int i = 0;
+		while (i<7) {
+			
+			double sumAll = 0;
+			double sumTotal = 0;
+			
+			Iterator<RegressionState> it = gameHistory.iterator();	
+			while (it.hasNext()) {
+				RegressionState aState = it.next();
+				sumAll = predictedValue (aState, copy);
+				sumAll -= reward;
+
+				if (i == 0) {
+					sumTotal = sumAll;
+				}
+				else {
+					sumTotal = sumAll * aState.getFeature(i);
+				}
+				
+			} //end inner while
+			
+			weight[i] = copy[i] - stepsize*((double) 1/gameHistory.size())* sumTotal;
+			i++;
+		}
 	}
 	
 
+	public double evalFunction (RegressionState state) {
+		double value = weight[0];
+		for (int i = 1; i< TOTAL_FEATURES; i++) {
+			value += weight[i] * state.getFeature(i);
+		}
+		return value;
+			
+	}
 	public void updateHistory(RegressionState state) {
 		gameHistory.add(state);
 	}
@@ -89,6 +188,102 @@ public class RegressionLearning {
 		return weight;
 	}
 	
+	
+	public int findBestMove(Node currentNode, int best ) { 
+        int turn = currentNode.getBoard().CurrentPlayer();
+
+        if (turn != player)
+                currentNode.setValue(Integer.MAX_VALUE);
+        else
+                currentNode.setValue(Integer.MIN_VALUE);
+
+        for (int i = 0; i < 6 ; i++)
+                if (currentNode.getBoard().validMove(i)) {
+                        try {
+                                MancalaGameState newBoard = currentNode.getBoard().copy() ;
+                                try {
+									newBoard.play(i);
+								} catch (Exception e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+
+                                Node newNode = new Node(newBoard,
+                                                currentNode.getDepth() + 1);
+
+                                newNode.setParent(currentNode);
+                                currentNode.setChild(newNode, i);
+
+                                // CUT OFF
+                                if (newNode.getBoard().checkEndGame()
+                                                || (newNode.getDepth() >= cutoffDepth)) {
+
+                                		RegressionState aState = new RegressionState(newNode.getBoard(),newNode.getBoard().CurrentPlayer());
+                                        newNode.setValue(evalFunction(aState));
+
+                                } else
+                                        findBestMove(newNode,best);
+
+                                // alpha-beta pruning
+                                // PLAYER 2 is AI = MAX
+                                // pick the child with larger value
+                                if (currentNode.getBoard().CurrentPlayer() == player) {
+                                        if (currentNode.getChild(i) != null) {
+                                                if (currentNode.getChild(i).getValue() > currentNode.getValue()) {
+                                                        currentNode.setValue(currentNode.getChild(i).getValue());
+                                                        best = i;
+                                                }
+                                        }
+                                        currentNode.deleteChild(i);
+
+                                        // alpha cut off if our value is greater than ANY
+                                        // player/MIN parent value
+
+                                        Node nodePtr = currentNode;
+                                        while (nodePtr.getParent() != null) {
+                                                nodePtr = nodePtr.getParent();
+                                                if ((nodePtr.getBoard().CurrentPlayer != player)
+                                                                && (currentNode.getValue() > nodePtr.getValue())) {
+                                                        nodePtr = null;
+                                                        return best;
+                                                }
+                                        }
+
+                                        nodePtr = null;
+                                }
+
+                                // PLAYER 1 is Player = MIN
+                                // pick the child with smaller value
+                                if (currentNode.getBoard().CurrentPlayer() != player) {
+                                        if (currentNode.getChild(i) != null) {
+                                                if (currentNode.getChild(i).getValue() < currentNode.getValue()) {
+                                                        currentNode.setValue(currentNode.getChild(i).getValue());
+                                                        best = i;
+                                                }
+                                        }
+                                        currentNode.deleteChild(i);
+
+                                        // beta cut off if our value is less than ANY
+                                        // computer/MAX parent value
+                                        Node nodePtr = currentNode;
+                                        while (nodePtr.getParent() != null) {
+                                                nodePtr = nodePtr.getParent();
+                                                if ((nodePtr.getBoard().CurrentPlayer() == player)
+                                                                && (currentNode.getValue() < nodePtr.getValue())) {
+                                                        nodePtr = null;
+                                                        return best;
+                                                }
+                                        }
+                                        nodePtr = null;
+                                }
+                        } catch (java.lang.OutOfMemoryError e) {
+                                System.out.println("OUT OF MEM");
+                                return -1;
+                        }
+                }
+        return best;
+}
+
 	
 }
 

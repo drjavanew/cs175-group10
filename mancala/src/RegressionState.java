@@ -12,8 +12,8 @@ public class RegressionState {
 	private int opponent;
 	
 	public RegressionState(MancalaGameState board, int player) {
-		board = this.board;
-		player = this.player;
+		this.board = board;
+		this.player = player;
 		opponent = 1 - player;
 	}
 	
@@ -24,44 +24,38 @@ public class RegressionState {
 
 	public int getFeature(int feature) {
 
-		int value = 0;
+		
+		switch (feature) {
+		
 		/* Feature 1: Difference between my score and opponent's score. */
-		if(feature == 1) {
-			value = board.getScore(player) - board.getScore(opponent);
-		}
-		
+		case 1:
+			return board.getScore(player) - board.getScore(opponent);
+					
 		/* Feature 2: How close I am to 24 stones (win condition). */
-		else if(feature == 2) {
-			value = board.getScore(player) - 24;
-		}
-		
+		case 2:
+			return board.getScore(player) - 24;
+					
 		/* Feature 3: How close my opponent is to 24 stones (lose condition). */
-		else if(feature == 3) {
-			value = board.getScore(opponent) - 24;		
-		}
+		case 3:
+			return board.getScore(opponent) - 24;
 		
 		/* Feature 4: # of stones in 2 closet slots. */
-		else if(feature == 4) {
-			value = board.stonesAt(player, 4) + board.stonesAt(player, 5);
-		}
+		case 4:
+			return board.stonesAt(player, 4) + board.stonesAt(player, 5);
 		
 		/* Feature 5: # of stones in 2 middle slots. */
-		else if(feature == 5) {
-			value = board.stonesAt(player, 2) + board.stonesAt(player, 3);
-			
-		}
+		case 5:
+			return board.stonesAt(player, 2) + board.stonesAt(player, 3);
 		
 		/* Feature 6: # of stones in 2 farthest slots. */
-		else if(feature == 6) {
-			value = board.stonesAt(player, 0) + board.stonesAt(player, 1);
-			
-		}
+		case 6:
+			return board.stonesAt(player, 0) + board.stonesAt(player, 1);
 		
-		else {
+		default:
 			System.out.println("ERROR: RegressionState.java = invalid feature number!");
+			return -1;
 		}
 		
-		return value;
 	}
 	
 	
