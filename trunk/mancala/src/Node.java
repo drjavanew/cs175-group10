@@ -2,18 +2,18 @@ import java.util.Vector;
 
 public class Node {
 	private int id;
-	public Board currentBoard;
+	public MancalaGameState currentBoard;
 	private int depth;
-	private int value;
+	private double value;
 	private Node parent;
 	private Vector<Node> children;
 
-	public Node(Board aBoard, int depthVal) {
-		id = -1;
-		currentBoard = aBoard;
-		depth = depthVal;
-		parent = null;
-		children = new Vector<Node>();
+	public Node(MancalaGameState aBoard, int depthVal) {
+		this.id = -1;
+		this.currentBoard = aBoard;
+		this.depth = depthVal;
+		this.parent = null;
+		this.children = new Vector<Node>();
 
 	}
 
@@ -25,7 +25,7 @@ public class Node {
 		id = anID;
 	}
 
-	public Board getBoard() {
+	public MancalaGameState getBoard() {
 		return currentBoard;
 	}
 
@@ -37,11 +37,11 @@ public class Node {
 		depth = depthVal;
 	}
 
-	public int getValue() {
+	public double getValue() {
 		return value;
 	}
 
-	public void setValue(int newVal) {
+	public void setValue(double newVal) {
 		value = newVal;
 	}
 

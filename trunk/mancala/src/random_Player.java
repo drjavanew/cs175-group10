@@ -16,16 +16,16 @@ public class random_Player implements MancalaPlayer {
 	public random_Player (int playerNum) {
 	  player = playerNum;
 	  opponent = 1 - player;
-	  
-	  ai = new RegressionLearning();
-	  //load theta values.
+	 
+	  // initialize ai and load theta values.
+	  ai = new RegressionLearning("data.txt");
+	 
 	  
 	}
 	
 	public int getMove(MancalaGameState gs) throws Exception {
 
 		
-		//int offset = player - Constants.PLAYER1;
 		double max = Float.NEGATIVE_INFINITY;
 		int bestMove = -1;
 		
