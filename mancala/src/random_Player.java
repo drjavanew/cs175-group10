@@ -18,42 +18,23 @@ public class random_Player implements MancalaPlayer {
 	  opponent = 1 - player;
 	 
 	  // initialize ai and load theta values.
-	  ai = new RegressionLearning("data.txt");
+	  ai = new RegressionLearning(playerNum,"data.txt");
 	 
 	  
 	}
 	
 	public int getMove(MancalaGameState gs) throws Exception {
 
-		
-		double max = Float.NEGATIVE_INFINITY;
+		ai.board = gs.copy();
 		int bestMove = -1;
+		Node evalNode = new Node(gs.copy(), 0);
+		bestMove = ai.findBestMove(evalNode, bestMove);
 		
-		for (int i = 0; i < 6; i++) {
-			
-			if (gs.validMove(i)) {
-				
-				//copy board and values given you execute the move.
-				MancalaGameState newBoard = gs.copy();
-				newBoard.play(i);
-				
-				
-				RegressionState newState = new RegressionState(newBoard, player);
-				
-				//calculate the state value for each slot and take the best one.
-				double stateValue = calStateValue(weight[player%Constants.PLAYER1], newState);
-				if (stateValue > max) {
-					max = stateValue;
-					bestMove = i;
-				}
-			}
-		}
 		
 		
 		if (bestMove != -1) {
-			MancalaGameState newBoard = gs.copy();
-			newBoard.play(bestMove);
-			updateHistory(state);
+			RegressionState aState = new RegressionState(gs.copy(),player);
+			ai.updateHistory(aState);
 		}
 		
 		

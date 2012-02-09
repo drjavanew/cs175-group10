@@ -66,6 +66,7 @@ public MancalaGameState play(int col) throws Exception {
       score[1] ^= score[0];
       score[0] ^= score[1];
       CurrentPlayer = 1 - CurrentPlayer;
+      secondPlayerFirstMoveMade = true;
       return this;
   }
   int curRow = CurrentPlayer; 
