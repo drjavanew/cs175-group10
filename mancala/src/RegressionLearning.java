@@ -28,14 +28,14 @@ public class RegressionLearning {
 	private static final int TOTAL_FEATURES = 6+1;
 	
 	int player;
-	int reward;
+	static int reward;
 	static int cutoffDepth;
 	/*
 	 * Game History contains each state of a turn within a single game.
 	 */
 	ArrayList<RegressionState> gameHistory = new ArrayList<RegressionState>();
 	
-	RegressionState state;
+	
 	
 	/* other */
 	public double[] weight = new double[TOTAL_FEATURES]; //a.k.a. theta value.
@@ -44,19 +44,17 @@ public class RegressionLearning {
 	int gamesPlayed = 0;
 	
 	
-	public RegressionLearning() {
-		
-		
-	}
 	
-	/* Constructor 2
+	/* Constructor 
 	 * 
 	 * This constructor takes in a filename and reads in the weight values of a
 	 * previous record.
 	 */
+	
+	
 	public RegressionLearning(int playerNum, String filename) {
-		player = playerNum;
-		cutoffDepth = 8;
+		this.player = playerNum;
+		cutoffDepth = 10;
 			//read and set weights of each feature from a file.
 			try {
 				String sCurrentLine;
@@ -72,24 +70,23 @@ public class RegressionLearning {
 			}   
 				 
 			catch (IOException x) {
-				System.err.println("Err");
+				for(int i = 0; i < weight.length; i++) {
+					weight[i] = 0;
+				}
 //					runTest();
 			}
 		}
 	
 	
+	public void setReward(int value) {
+		reward = value;
+	}
 	
-	/* Constructor */
-	public RegressionLearning(MancalaGameState board, int player) {
-		board = this.board;
-		player = this.player;
-	
-		//initialize with 0 weight value.
-		for(int i = 0; i < weight.length; i++) {
-			weight[i] = 0;
-		}
-		
-		state = new RegressionState(board, player);
+	public void incGamesPlayed() {
+		gamesPlayed ++;
+	}
+	public int getGamesPlayed () {
+		return gamesPlayed;
 	}
 	
 	
@@ -114,6 +111,14 @@ public class RegressionLearning {
 		return 1;
 	}
 	
+	public void printThetas(double[] myValues) {
+		for (int i = 0; i < myValues.length; i++) {
+			System.out.println (myValues[i]);
+			
+		}
+		System.out.printf ("\n");
+	}
+	
 	public void saveThetas(String filename) {
 		try {
 			
@@ -134,19 +139,21 @@ public class RegressionLearning {
 	}
 	
 	public void copyArr (double[] original, double[] copy) {
-		for (int i = 0; i<original.length; i++) {
+		for (int i = 0; i < original.length; i++) {
 			copy[i] = original[i]; 
 		}
 	}
 	
+	
+	
 	/* calculate the gradient descent. */
-	public void gradientDescent(double stepsize, int resultValue) {
+	public void gradientDescent(double stepsize) {
 		
 		double[] copy = new double[TOTAL_FEATURES];
 		copyArr(weight,copy);
 		
 		int i = 0;
-		while (i<7) {
+		while (i<TOTAL_FEATURES) {
 			
 			double sumAll = 0;
 			double sumTotal = 0;
@@ -157,18 +164,16 @@ public class RegressionLearning {
 				sumAll = predictedValue (aState, copy);
 				sumAll -= reward;
 
-				if (i == 0) {
-					sumTotal = sumAll;
-				}
-				else {
-					sumTotal = sumAll * aState.getFeature(i);
-				}
+				
+				sumTotal += sumAll * aState.getFeature(i);
+				
 				
 			} //end inner while
 			
 			weight[i] = copy[i] - stepsize*((double) 1/gameHistory.size())* sumTotal;
 			i++;
 		}
+		gameHistory.clear();
 	}
 	
 
@@ -185,19 +190,18 @@ public class RegressionLearning {
 	}
 	
 	
-	//Accessors
 	public double[] getWeight() {
 		return weight;
 	}
 	
 	
-	public int findBestMove(Node currentNode, int best ) { 
+	public int findBestMove(Node currentNode, int best) { 
         int turn = currentNode.getBoard().CurrentPlayer();
 
         if (turn != player)
-                currentNode.setValue(Integer.MAX_VALUE);
+                currentNode.setValue(Float.POSITIVE_INFINITY);
         else
-                currentNode.setValue(Integer.MIN_VALUE);
+                currentNode.setValue(Float.NEGATIVE_INFINITY);
 
         for (int i = 0; i < 6 ; i++)
                 if (currentNode.getBoard().validMove(i)) {
@@ -227,7 +231,7 @@ public class RegressionLearning {
                                         findBestMove(newNode,best);
 
                                 // alpha-beta pruning
-                                // PLAYER 2 is AI = MAX
+                                // AI = MAX
                                 // pick the child with larger value
                                 if (currentNode.getBoard().CurrentPlayer() == player) {
                                         if (currentNode.getChild(i) != null) {
@@ -254,7 +258,7 @@ public class RegressionLearning {
                                         nodePtr = null;
                                 }
 
-                                // PLAYER 1 is Player = MIN
+                                // Player = MIN
                                 // pick the child with smaller value
                                 if (currentNode.getBoard().CurrentPlayer() != player) {
                                         if (currentNode.getChild(i) != null) {

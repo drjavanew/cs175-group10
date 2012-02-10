@@ -68,6 +68,7 @@ public class TermGame {
 
         System.out.println("Player 0 score: " + gs.getScore(0));
         System.out.println("Player 1 score: " + gs.getScore(1));
+        gs.reset();
 
     }
 
@@ -90,8 +91,12 @@ public class TermGame {
         String[] players = new String[2];
             if (args.length > 1) players[0]=args[2]; else players[0] = "interactive";
             if (args.length > 2) players[1]=args[3]; else players[1] = "random";
-
+        
+            
         TermGame game = new TermGame(gameType, ss, players[0], players[1]);
+        for (int i =1; i<= 10; i++){
         game.play();
+        
+        }
     }
 }

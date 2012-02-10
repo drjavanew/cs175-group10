@@ -30,14 +30,10 @@ public class random_Player implements MancalaPlayer {
 		Node evalNode = new Node(gs.copy(), 0);
 		bestMove = ai.findBestMove(evalNode, bestMove);
 		
-		
-		
 		if (bestMove != -1) {
 			RegressionState aState = new RegressionState(gs.copy(),player);
 			ai.updateHistory(aState);
 		}
-		
-		
 		 
 		return bestMove;
 	
@@ -46,31 +42,27 @@ public class random_Player implements MancalaPlayer {
 	
 	/* This method will be used to learn from the game we just played. */
 	public Object postGameActions(MancalaGameState gs) {
+		ai.printThetas(ai.getWeight());
 	    if (!gs.checkEndGame()) return null;
-	
-	    // Make a copy to compute the final score
+	    
+//	    Make a copy to compute the final score
 	    MancalaGameState gsCopy = gs.copy();
 	    gsCopy.computeFinalScore();
+	    RegressionState aState = new RegressionState(gsCopy,player);
+		ai.updateHistory(aState);
+		ai.incGamesPlayed();
+		System.out.println(ai.getGamesPlayed());
+		
+	    if (gsCopy.getScore(player) > gsCopy.getScore(1-player))
+	        ai.setReward(1);
+	    else if (gsCopy.getScore(player) < gsCopy.getScore(1-player)) 
+	        ai.setReward(-1);
+	    else 
+	        ai.setReward(0);
 	    
-		
-		
-		ai = new RegressionLearning(gs, player);
-		
-		
-		
-	
-	    if (gsCopy.getScore(player) > gsCopy.getScore(opponent)) {
-	        System.out.println("I win!");    	
-	    }
-	
-	    else if (gsCopy.getScore(player) < gsCopy.getScore(opponent)) {
-	        System.out.println("I lost...");
-	    }
-	    
-	    else {
-	        System.out.println("I tied.");
-	    }
-	
+	    ai.gradientDescent((double)0.01);
+	    ai.printThetas(ai.getWeight());
+	    ai.saveThetas("data.txt");
 	    return null;
 	}
 

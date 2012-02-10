@@ -27,6 +27,9 @@ public class RegressionState {
 		
 		switch (feature) {
 		
+		/* Feature 0: just for constant */
+		case 0:
+			return 1;
 		/* Feature 1: Difference between my score and opponent's score. */
 		case 1:
 			return board.getScore(player) - board.getScore(opponent);
