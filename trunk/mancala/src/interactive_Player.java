@@ -16,18 +16,18 @@ public int getMove(MancalaGameState gs) throws Exception {
 }
 
 public Object postGameActions(MancalaGameState gs) {
-    if (!gs.checkEndGame()) return null;
+//    if (!gs.checkEndGame()) return null;
 
-    // Make a copy to compute the final score
-    MancalaGameState gsCopy = gs.copy();
-    gsCopy.computeFinalScore();
-
-    if (gsCopy.getScore(player) > gsCopy.getScore(1-player))
-        System.out.println("You won!");
-    else if (gsCopy.getScore(player) < gsCopy.getScore(1-player)) 
-        System.out.println("You lost...");
-    else 
-        System.out.println("Game was a tie.");
+//    // Make a copy to compute the final score
+//    MancalaGameState gsCopy = gs.copy();
+//    gsCopy.computeFinalScore();
+//
+//    if (gsCopy.getScore(player) > gsCopy.getScore(1-player))
+//        System.out.println("You won!");
+//    else if (gsCopy.getScore(player) < gsCopy.getScore(1-player)) 
+//        System.out.println("You lost...");
+//    else 
+//        System.out.println("Game was a tie.");
 
     return null;
 }
