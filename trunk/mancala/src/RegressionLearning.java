@@ -17,7 +17,7 @@ import java.util.Vector;
 
 
 
-//TODO: MERGE WITH PLAYER CLASS.
+
 
 
 
@@ -54,7 +54,7 @@ public class RegressionLearning {
 	
 	public RegressionLearning(int playerNum, String filename) {
 		this.player = playerNum;
-		cutoffDepth = 10;
+		cutoffDepth = 8;
 			//read and set weights of each feature from a file.
 			try {
 				String sCurrentLine;
@@ -89,7 +89,9 @@ public class RegressionLearning {
 		return gamesPlayed;
 	}
 	
-	
+	public void reset() {
+		gameHistory.clear();
+	}
 	
 	/*
 	 * LINEAR REGRESSION METHODS.
@@ -107,8 +109,20 @@ public class RegressionLearning {
 	
 	
 	/* Returns the square of error value. */
-	public int errorValue(int result) {
-		return 1;
+	public double errorValue() {
+		double sumAll =0;
+		double total  = 0;
+		Iterator<RegressionState> it = gameHistory.iterator();	
+		while (it.hasNext()) {
+			RegressionState aState = it.next();
+			sumAll = predictedValue (aState, weight);
+			sumAll -= reward;
+			total += sumAll;
+
+			
+			
+		} //end while
+		return total;
 	}
 	
 	public void printThetas(double[] myValues) {
@@ -172,8 +186,8 @@ public class RegressionLearning {
 			
 			weight[i] = copy[i] - stepsize*((double) 1/gameHistory.size())* sumTotal;
 			i++;
-		}
-		gameHistory.clear();
+		}// end while
+		
 	}
 	
 
