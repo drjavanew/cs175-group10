@@ -15,13 +15,6 @@ import java.util.Iterator;
 import java.util.Vector;
 
 
-
-
-
-
-
-
-
 public class RegressionLearning {
 
 	/* CONSTANTS */
@@ -35,7 +28,9 @@ public class RegressionLearning {
 	 */
 	ArrayList<RegressionState> gameHistory = new ArrayList<RegressionState>();
 	
-	
+	// these are to verify the cost function and learning rate 
+	ArrayList<ArrayList<RegressionState>> TotalHistory = new ArrayList<ArrayList<RegressionState>>();
+	ArrayList<RegressionState> sampleHistory = new ArrayList<RegressionState>();
 	
 	/* other */
 	public double[] weight = new double[TOTAL_FEATURES]; //a.k.a. theta value.
@@ -60,6 +55,7 @@ public class RegressionLearning {
 				String sCurrentLine;
 			 
 				BufferedReader br = new BufferedReader(new FileReader(filename));
+				System.out.println("Reading theta from " + filename );
 				int i=0;
 				
 				while ((sCurrentLine = br.readLine()) != null) {
@@ -70,6 +66,7 @@ public class RegressionLearning {
 			}   
 				 
 			catch (IOException x) {
+				System.out.println("New thetas");
 				for(int i = 0; i < weight.length; i++) {
 					weight[i] = 0;
 				}
@@ -108,6 +105,56 @@ public class RegressionLearning {
 	}
 	
 	
+	public void saveSample() {
+		sampleHistory = (ArrayList<RegressionState>) gameHistory.clone();
+	}
+	
+	public double costFunction() {
+		double sumAll =0;
+		double total  = 0;
+		Iterator<RegressionState> it = sampleHistory.iterator();	
+		while (it.hasNext()) {
+			RegressionState aState = it.next();
+			sumAll = predictedValue (aState, weight);
+			sumAll -= reward;
+			total += sumAll*sumAll;
+
+			
+			
+		} //end while
+		return total;
+	}
+	public void addTotalHistory() {
+		ArrayList<RegressionState> elem = (ArrayList<RegressionState>) gameHistory.clone();
+		TotalHistory.add(elem);
+	}
+	
+	public void checkEvalFunction(){
+		System.out.println(costFunction());
+	}
+	
+	public void checkLeantFucntion() {
+		Iterator<ArrayList<RegressionState>> it = TotalHistory.iterator();
+		while (it.hasNext()) {
+			Iterator<RegressionState> myit = it.next().iterator();
+			System.out.println(errorValue(myit));
+		}
+	}
+	
+	
+	public double errorValue(Iterator<RegressionState> it) {
+		double sumAll =0;
+		double total  = 0;
+		while (it.hasNext()) {
+			RegressionState aState = it.next();
+			sumAll = predictedValue (aState, weight);
+			sumAll -= reward;
+			total += sumAll*sumAll;
+		} //end while
+		return total;
+	}
+	
+	
 	/* Returns the square of error value. */
 	public double errorValue() {
 		double sumAll =0;
@@ -117,7 +164,7 @@ public class RegressionLearning {
 			RegressionState aState = it.next();
 			sumAll = predictedValue (aState, weight);
 			sumAll -= reward;
-			total += sumAll;
+			total += sumAll*sumAll;
 
 			
 			
@@ -238,7 +285,7 @@ public class RegressionLearning {
                                 if (newNode.getBoard().checkEndGame()
                                                 || (newNode.getDepth() >= cutoffDepth)) {
 
-                                		RegressionState aState = new RegressionState(newNode.getBoard(),newNode.getBoard().CurrentPlayer());
+                                		RegressionState aState = new RegressionState(newNode.getBoard(),player);
                                         newNode.setValue(evalFunction(aState));
 
                                 } else
