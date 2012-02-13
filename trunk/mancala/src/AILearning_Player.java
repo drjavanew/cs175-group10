@@ -52,19 +52,31 @@ public class AILearning_Player implements MancalaPlayer {
 		ai.updateHistory(aState);
 		ai.incGamesPlayed();
 		
-	    if (gsCopy.getScore(player) > gsCopy.getScore(1-player))
+	    if (gsCopy.getScore(player) > gsCopy.getScore(1-player)) {
 	        ai.setReward(1);
-	    else if (gsCopy.getScore(player) < gsCopy.getScore(1-player)) 
+	        System.out.printf("Win \t ");
+	    }
+	    else if (gsCopy.getScore(player) < gsCopy.getScore(1-player)) {
 	        ai.setReward(-1);
-	    else 
+	        System.out.printf("Loose \t ");
+	    }
+	    else  {
 	        ai.setReward(0);
+	        System.out.printf("Draw \t ");
+	    }
+	    if (ai.getGamesPlayed()==1) {
+	    	ai.saveSample();
+	    }
 	    
-	    System.out.println(ai.errorValue());
-	    ai.gradientDescent((double)0.01/ai.getGamesPlayed());
+	    ai.gradientDescent((double)0.001/ai.getGamesPlayed());
 //	    ai.printThetas(ai.getWeight());
-	    System.out.println(ai.errorValue());
+//	    ai.addTotalHistory();
 	    ai.reset();
-//	    ai.saveThetas("data.txt");
+	    ai.checkEvalFunction();
+//	    if(ai.getGamesPlayed()==100) {
+//	    	ai.checkLeantFucntion();
+//	    }
+	    ai.saveThetas("data.txt");
 	    return null;
 	}
 

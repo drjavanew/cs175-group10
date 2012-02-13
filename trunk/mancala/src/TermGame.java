@@ -67,9 +67,9 @@ public class TermGame {
 //        System.out.println("After moving in remaining pieces: ");
 //        gs.printState();
 
-        System.out.println("Player 0 score: " + gs.getScore(0));
-        System.out.println("Player 1 score: " + gs.getScore(1));
-        System.out.println();
+//        System.out.println("Player 0 score: " + gs.getScore(0));
+//        System.out.println("Player 1 score: " + gs.getScore(1));
+//        System.out.println();
         gs.reset();
 
     }
@@ -96,8 +96,8 @@ public class TermGame {
         
             
         TermGame game = new TermGame(gameType, ss, players[0], players[1]);
-        for (int i =1; i<= 100; i++){
-        	System.out.println("Teration" + i + ": " );
+        for (int i =1; i<= 100000; i++){
+//        	System.out.println("Iteration" + i + ": " );
         game.play();
         
         }
