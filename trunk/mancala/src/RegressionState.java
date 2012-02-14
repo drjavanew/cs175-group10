@@ -56,7 +56,7 @@ public class RegressionState {
 				sum += board.stonesAt(opponent, i);
 			return sum;
 			
-		// Feature 6: # stones on my side what could be captured
+		// Feature 6: # stones on my side that could be captured
 		
 		// Feature 7: # stones on opponent's side what could be captured
 			
