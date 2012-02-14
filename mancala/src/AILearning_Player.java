@@ -1,6 +1,6 @@
 /*
  * author: William Lam
- * author: Andrew Furusawa
+ * author: Andrew Furusawa, Khan Nguyen
  * 
  * class name: random_Player
  * description: 
