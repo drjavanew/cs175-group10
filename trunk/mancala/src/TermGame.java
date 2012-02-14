@@ -46,30 +46,30 @@ public class TermGame {
 
     public void play() throws Exception {
         while (!gs.checkEndGame()) {
-//            gs.printState();
-//            System.out.print("Player " + gs.CurrentPlayer() + "'s move: ");
+            gs.printState();
+            System.out.print("Player " + gs.CurrentPlayer() + "'s move: ");
             int move = player[gs.CurrentPlayer()].getMove(gs);
             while (!gs.validMove(move)) {
-//                System.out.println("Invalid move!");
-//                System.out.println("Player " + gs.CurrentPlayer() + "'s move: ");
+                System.out.println("Invalid move!");
+                System.out.println("Player " + gs.CurrentPlayer() + "'s move: ");
                 move = player[gs.CurrentPlayer()].getMove(gs);
             }
-//            System.out.println(move);
+            System.out.println(move);
             gs.play(move);
         }
-//        gs.printState();
-//        System.out.println("\nPerforming player 0 post game actions...");
+        gs.printState();
+        System.out.println("\nPerforming player 0 post game actions...");
         player[0].postGameActions(gs);
-//        System.out.println("Performing player 1 post game actions...");
+        System.out.println("Performing player 1 post game actions...");
         player[1].postGameActions(gs);
 
         gs.computeFinalScore();
-//        System.out.println("After moving in remaining pieces: ");
-//        gs.printState();
+        System.out.println("After moving in remaining pieces: ");
+        gs.printState();
 
-//        System.out.println("Player 0 score: " + gs.getScore(0));
-//        System.out.println("Player 1 score: " + gs.getScore(1));
-//        System.out.println();
+        System.out.println("Player 0 score: " + gs.getScore(0));
+        System.out.println("Player 1 score: " + gs.getScore(1));
+        System.out.println();
         gs.reset();
 
     }
@@ -96,7 +96,7 @@ public class TermGame {
         
             
         TermGame game = new TermGame(gameType, ss, players[0], players[1]);
-        for (int i =1; i<= 100000; i++){
+        for (int i =1; i<= 500; i++){
 //        	System.out.println("Iteration" + i + ": " );
         game.play();
         

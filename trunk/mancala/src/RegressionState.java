@@ -56,10 +56,59 @@ public class RegressionState {
 				sum += board.stonesAt(opponent, i);
 			return sum;
 			
-		// Feature 6: # stones on my side that could be captured
-		
+		// Feature 6: # stones on my side what could be captured
+		case 6: 
+			sum =0;
+			for (int i =0; i< 6; i++)
+				if ((board.stonesAt(opponent, i) == 0) && (board.stonesAt(player,i) !=0)){
+					
+					if (player == 1){ 
+						for (int j =0; j < i;j++)
+							if ((board.stonesAt(opponent, j) != 0) &&
+							       (board.stonesAt(opponent, j)+j == i)) 
+								sum += board.stonesAt(player,i);
+						for (int j = i; j <6; j++)
+							if (board.stonesAt(opponent, j) == 13-j+i)
+									sum += board.stonesAt(player,i)+1;
+					}
+					else {
+						for (int j = i+1; j <6; j++)
+							if ((board.stonesAt(opponent, j) != 0) &&
+							       (j- board.stonesAt(opponent, j) == i)) 
+								sum += board.stonesAt(player,i);
+						for (int j =0; j <= i;j++)
+							if (board.stonesAt(opponent, j) == 13-i+j)
+									sum += board.stonesAt(player,i)+1;
+					}
+				}
+			return sum;
+					
 		// Feature 7: # stones on opponent's side what could be captured
-			
+		case 7:
+			sum =0;
+			for (int i =0; i< 6; i++)
+				if ((board.stonesAt(opponent, i) != 0) && (board.stonesAt(player,i) ==0)){
+					
+					if (opponent == 1){ 
+						for (int j =0; j < i;j++)
+							if ((board.stonesAt(player, j) != 0) &&
+							       (board.stonesAt(player, j)+j == i)) 
+								sum += board.stonesAt(opponent,i);
+						for (int j = i; j <6; j++)
+							if (board.stonesAt(player, j) == 13-j+i)
+									sum += board.stonesAt(opponent,i)+1;
+					}
+					else {
+						for (int j = i+1; j <6; j++)
+							if ((board.stonesAt(player, j) != 0) &&
+							       (j- board.stonesAt(player, j) == i)) 
+								sum += board.stonesAt(opponent,i);
+						for (int j =0; j <= i;j++)
+							if (board.stonesAt(player, j) == 13-i+j)
+									sum += board.stonesAt(opponent,i)+1;
+					}
+				}
+			return sum;
 			
 		/* Feature 4: # of stones in 2 closet slots. 
 		case 4:
