@@ -18,11 +18,11 @@ import java.util.Vector;
 public class RegressionLearning {
 
 	/* CONSTANTS */
-	private static final int TOTAL_FEATURES = 7+1;
+	private static final int TOTAL_FEATURES = 7+1; //# of features + 1 constant.
 	
 	int player;
 	static int reward;
-	static int cutoffDepth;
+	static int cutoffDepth; //search depth
 	/*
 	 * Game History contains each state of a turn within a single game.
 	 */
@@ -33,7 +33,7 @@ public class RegressionLearning {
 	ArrayList<RegressionState> sampleHistory = new ArrayList<RegressionState>();
 	
 	/* other */
-	public double[] weight = new double[TOTAL_FEATURES]; //a.k.a. theta value.
+	public double[] weight = new double[TOTAL_FEATURES]; //a.k.a. list of theta value.
 
 	MancalaGameState board;
 	int gamesPlayed = 0;
@@ -66,28 +66,32 @@ public class RegressionLearning {
 				}			
 				br.close();	    
 			}   
-				 
+			
+			//if file not found, create new theta values at 0.	 
 			catch (IOException x) {
 				System.out.println("New thetas");
 				for(int i = 0; i < weight.length; i++) {
 					weight[i] = 0;
 				}
-//					runTest();
 			}
 		}
 	
-	
+	/* Sets the reward value to win or loss. */
 	public void setReward(int value) {
 		reward = value;
 	}
 	
+	/* Increment the number of games played by one. */
 	public void incGamesPlayed() {
 		gamesPlayed ++;
 	}
+
+	/* Get number total of games played. */
 	public int getGamesPlayed () {
 		return gamesPlayed;
 	}
 	
+	/* Reset the current game. */
 	public void reset() {
 		gameHistory.clear();
 	}
@@ -106,7 +110,7 @@ public class RegressionLearning {
 		return sum;
 	}
 	
-	
+	/* Save a copy of the current game history. */
 	public void saveSample() {
 		sampleHistory = (ArrayList<RegressionState>) gameHistory.clone();
 	}
@@ -126,11 +130,14 @@ public class RegressionLearning {
 		} //end while
 		return total;
 	}
+
+	/* Add current game to a the history of all games played. */
 	public void addTotalHistory() {
 		ArrayList<RegressionState> elem = (ArrayList<RegressionState>) gameHistory.clone();
 		TotalHistory.add(elem);
 	}
 	
+      /* Prints out the value of the cost function. */
 	public void checkEvalFunction(){
 		System.out.println(costFunction());
 	}
@@ -176,12 +183,13 @@ public class RegressionLearning {
 	
 	public void printThetas(double[] myValues) {
 		for (int i = 0; i < myValues.length; i++) {
-			System.out.println (myValues[i]);
+			System.out.println (myValues[i]); //theta values.
 			
 		}
 		System.out.printf ("\n");
 	}
 	
+	/* Write the theta values to the data file. */
 	public void saveThetas(String filename) {
 		try {
 			
@@ -253,7 +261,7 @@ public class RegressionLearning {
 		gameHistory.add(state);
 	}
 	
-	
+	/* Gets the list of weights */
 	public double[] getWeight() {
 		return weight;
 	}
@@ -261,12 +269,14 @@ public class RegressionLearning {
 	
 	public int findBestMove(Node currentNode, int best) { 
         int turn = currentNode.getBoard().CurrentPlayer();
-
+	
+	// set the current value of the current node to compare with children node
         if (turn != player)
                 currentNode.setValue(Float.POSITIVE_INFINITY);
         else
                 currentNode.setValue(Float.NEGATIVE_INFINITY);
 
+	//Check each pit on your side to find the best move. */
         for (int i = 0; i < 6 ; i++)
                 if (currentNode.getBoard().validMove(i)) {
                         try {
@@ -351,7 +361,7 @@ public class RegressionLearning {
                                 return -1;
                         }
                 }
-        return best;
+        return best; //return the best move
 }
 
 	
