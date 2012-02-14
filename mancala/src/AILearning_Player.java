@@ -1,8 +1,8 @@
 /*
  * author: William Lam
- * author: Andrew Furusawa, Khan Nguyen
+ * author: Andrew Furusawa
  * 
- * class name: random_Player
+ * class name: AILearning_Player
  * description: 
  */
 
@@ -53,11 +53,11 @@ public class AILearning_Player implements MancalaPlayer {
 		ai.incGamesPlayed();
 		
 	    if (gsCopy.getScore(player) > gsCopy.getScore(1-player)) {
-	        ai.setReward(1);
+	        ai.setReward(gsCopy.getScore(player)-gsCopy.getScore(1-player));
 	        System.out.printf("Win \t ");
 	    }
 	    else if (gsCopy.getScore(player) < gsCopy.getScore(1-player)) {
-	        ai.setReward(-1);
+	        ai.setReward(gsCopy.getScore(player)-gsCopy.getScore(1-player));
 	        System.out.printf("Loose \t ");
 	    }
 	    else  {
@@ -68,7 +68,7 @@ public class AILearning_Player implements MancalaPlayer {
 	    	ai.saveSample();
 	    }
 	    
-	    ai.gradientDescent((double)0.001/ai.getGamesPlayed());
+	    ai.gradientDescent((double)0.01/ai.getGamesPlayed());
 //	    ai.printThetas(ai.getWeight());
 //	    ai.addTotalHistory();
 	    ai.reset();

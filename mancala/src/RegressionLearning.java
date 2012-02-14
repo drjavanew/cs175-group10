@@ -18,12 +18,11 @@ import java.util.Vector;
 public class RegressionLearning {
 
 	/* CONSTANTS */
-	private static final int TOTAL_FEATURES = 6+1; //# of features + 1 constant.
+	private static final int TOTAL_FEATURES = 7+1;
 	
 	int player;
-	static int reward; //reward is win(1) or loss(-1).
-	static int cutoffDepth; //search depth.
-	
+	static int reward;
+	static int cutoffDepth;
 	/*
 	 * Game History contains each state of a turn within a single game.
 	 */
@@ -34,7 +33,7 @@ public class RegressionLearning {
 	ArrayList<RegressionState> sampleHistory = new ArrayList<RegressionState>();
 	
 	/* other */
-	public double[] weight = new double[TOTAL_FEATURES]; //a.k.a. list of theta value.
+	public double[] weight = new double[TOTAL_FEATURES]; //a.k.a. theta value.
 
 	MancalaGameState board;
 	int gamesPlayed = 0;
@@ -46,11 +45,11 @@ public class RegressionLearning {
 	 * This constructor takes in a filename and reads in the weight values of a
 	 * previous record.
 	 */
-
+	
+	
 	public RegressionLearning(int playerNum, String filename) {
 		this.player = playerNum;
-		cutoffDepth = 8; //search depth.
-		
+		cutoffDepth = 8;
 			//read and set weights of each feature from a file.
 			try {
 				String sCurrentLine;
@@ -58,39 +57,37 @@ public class RegressionLearning {
 				BufferedReader br = new BufferedReader(new FileReader(filename));
 				System.out.println("Reading theta from " + filename );
 				int i=0;
-				
+				String s = br.readLine();
+				gamesPlayed = Integer.parseInt(s);
+				System.out.println(gamesPlayed);
 				while ((sCurrentLine = br.readLine()) != null) {
 					weight[i] =	Double.parseDouble(sCurrentLine);
 					i++;
 				}			
 				br.close();	    
 			}   
-			
-			//if file not found, create new theta values at 0.
+				 
 			catch (IOException x) {
+				System.out.println("New thetas");
 				for(int i = 0; i < weight.length; i++) {
 					weight[i] = 0;
 				}
-				System.out.println("Created new theta values.");
+//					runTest();
 			}
 		}
 	
-	/* Sets the reward value to win or loss. */
+	
 	public void setReward(int value) {
 		reward = value;
 	}
 	
-	/* Increment the number of games played by one. */
 	public void incGamesPlayed() {
 		gamesPlayed ++;
 	}
-	
-	/* Get number total of games played. */
 	public int getGamesPlayed () {
 		return gamesPlayed;
 	}
 	
-	/* Reset the current game. */
 	public void reset() {
 		gameHistory.clear();
 	}
@@ -109,7 +106,7 @@ public class RegressionLearning {
 		return sum;
 	}
 	
-	/* Save a copy of the current game history. */
+	
 	public void saveSample() {
 		sampleHistory = (ArrayList<RegressionState>) gameHistory.clone();
 	}
@@ -124,17 +121,16 @@ public class RegressionLearning {
 			sumAll -= reward;
 			total += sumAll*sumAll;
 
+			
+			
 		} //end while
 		return total;
 	}
-	
-	/* Add current game to a the history of all games played. */
 	public void addTotalHistory() {
 		ArrayList<RegressionState> elem = (ArrayList<RegressionState>) gameHistory.clone();
 		TotalHistory.add(elem);
 	}
 	
-	/* Prints out the value of the cost function. */
 	public void checkEvalFunction(){
 		System.out.println(costFunction());
 	}
@@ -171,27 +167,34 @@ public class RegressionLearning {
 			sumAll = predictedValue (aState, weight);
 			sumAll -= reward;
 			total += sumAll*sumAll;
+
+			
+			
 		} //end while
 		return total;
 	}
 	
 	public void printThetas(double[] myValues) {
 		for (int i = 0; i < myValues.length; i++) {
-			System.out.println (myValues[i]); //theta values.	
+			System.out.println (myValues[i]);
+			
 		}
 		System.out.printf ("\n");
 	}
 	
-	/* Write the theta values to the data file. */
 	public void saveThetas(String filename) {
-		try {			
+		try {
+			
 			String s;
 			BufferedWriter bw = new BufferedWriter(new FileWriter(filename));
+			bw.write(String.valueOf(gamesPlayed)+ "\n");
 			for (int j=0; j < weight.length; j++) {
-				s = String.valueOf(weight[j])+ "\n";
-				bw.write(s);
-			}			
-			bw.close();			    
+					s = String.valueOf(weight[j])+ "\n";
+					bw.write(s);
+			}
+			
+			bw.close();
+			    
 		}   
 			 
 		catch (IOException e) {
@@ -225,13 +228,16 @@ public class RegressionLearning {
 				sumAll = predictedValue (aState, copy);
 				sumAll -= reward;
 
+				
 				sumTotal += sumAll * aState.getFeature(i);
+				
 				
 			} //end inner while
 			
 			weight[i] = copy[i] - stepsize*((double) 1/gameHistory.size())* sumTotal;
 			i++;
-		}// end while	
+		}// end while
+		
 	}
 	
 
@@ -247,7 +253,7 @@ public class RegressionLearning {
 		gameHistory.add(state);
 	}
 	
-	/* Gets the list of weights */
+	
 	public double[] getWeight() {
 		return weight;
 	}
@@ -255,98 +261,98 @@ public class RegressionLearning {
 	
 	public int findBestMove(Node currentNode, int best) { 
         int turn = currentNode.getBoard().CurrentPlayer();
-        
-        //TODO: what does this do?
+
         if (turn != player)
-            currentNode.setValue(Float.POSITIVE_INFINITY);
+                currentNode.setValue(Float.POSITIVE_INFINITY);
         else
-            currentNode.setValue(Float.NEGATIVE_INFINITY);
-        
-        
-        //Check each pit on your side to find the best move. */
+                currentNode.setValue(Float.NEGATIVE_INFINITY);
+
         for (int i = 0; i < 6 ; i++)
-            if (currentNode.getBoard().validMove(i)) {
-                try {
-                    MancalaGameState newBoard = currentNode.getBoard().copy() ;
-                    try {
-						newBoard.play(i);
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+                if (currentNode.getBoard().validMove(i)) {
+                        try {
+                                MancalaGameState newBoard = currentNode.getBoard().copy() ;
+                                try {
+									newBoard.play(i);
+								} catch (Exception e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
 
-                    Node newNode = new Node(newBoard, currentNode.getDepth() + 1);
+                                Node newNode = new Node(newBoard,
+                                                currentNode.getDepth() + 1);
 
-                    newNode.setParent(currentNode);
-                    currentNode.setChild(newNode, i);
+                                newNode.setParent(currentNode);
+                                currentNode.setChild(newNode, i);
 
-                    // CUT OFF
-                    if (newNode.getBoard().checkEndGame() || (newNode.getDepth() >= cutoffDepth)) {
-                		RegressionState aState = new RegressionState(newNode.getBoard(),player);
-                        newNode.setValue(evalFunction(aState));
-                    } 
-                    else
-                        findBestMove(newNode,best);
+                                // CUT OFF
+                                if (newNode.getBoard().checkEndGame()
+                                                || (newNode.getDepth() >= cutoffDepth)) {
 
-                    // alpha-beta pruning
-                    // AI = MAX
-                    // pick the child with larger value
-                    if (currentNode.getBoard().CurrentPlayer() == player) {
-                        if (currentNode.getChild(i) != null) {
-                            if (currentNode.getChild(i).getValue() > currentNode.getValue()) {
-                                    currentNode.setValue(currentNode.getChild(i).getValue());
-                                    best = i;
-                            }
-                        }
-                        currentNode.deleteChild(i);
+                                		RegressionState aState = new RegressionState(newNode.getBoard(),player);
+                                        newNode.setValue(evalFunction(aState));
 
-                        // alpha cut off if our value is greater than ANY
-                        // player/MIN parent value
+                                } else
+                                        findBestMove(newNode,best);
 
-                        Node nodePtr = currentNode;
-                        while (nodePtr.getParent() != null) {
-                            nodePtr = nodePtr.getParent();
-                            if ((nodePtr.getBoard().CurrentPlayer != player)
-                                && (currentNode.getValue() > nodePtr.getValue())) {
-                                nodePtr = null;
-                                return best;
-                            }
-                        }
+                                // alpha-beta pruning
+                                // AI = MAX
+                                // pick the child with larger value
+                                if (currentNode.getBoard().CurrentPlayer() == player) {
+                                        if (currentNode.getChild(i) != null) {
+                                                if (currentNode.getChild(i).getValue() > currentNode.getValue()) {
+                                                        currentNode.setValue(currentNode.getChild(i).getValue());
+                                                        best = i;
+                                                }
+                                        }
+                                        currentNode.deleteChild(i);
 
-                        nodePtr = null;
-                    }
+                                        // alpha cut off if our value is greater than ANY
+                                        // player/MIN parent value
 
-                    // Player = MIN
-                    // pick the child with smaller value
-                    if (currentNode.getBoard().CurrentPlayer() != player) {
-                        if (currentNode.getChild(i) != null) {
-                                if (currentNode.getChild(i).getValue() < currentNode.getValue()) {
-                                        currentNode.setValue(currentNode.getChild(i).getValue());
-                                        best = i;
-                                }
-                        }
-                        currentNode.deleteChild(i);
+                                        Node nodePtr = currentNode;
+                                        while (nodePtr.getParent() != null) {
+                                                nodePtr = nodePtr.getParent();
+                                                if ((nodePtr.getBoard().CurrentPlayer != player)
+                                                                && (currentNode.getValue() > nodePtr.getValue())) {
+                                                        nodePtr = null;
+                                                        return best;
+                                                }
+                                        }
 
-                        // beta cut off if our value is less than ANY
-                        // computer/MAX parent value
-                        Node nodePtr = currentNode;
-                        while (nodePtr.getParent() != null) {
-                                nodePtr = nodePtr.getParent();
-                                if ((nodePtr.getBoard().CurrentPlayer() == player)
-                                                && (currentNode.getValue() < nodePtr.getValue())) {
                                         nodePtr = null;
-                                        return best;
                                 }
+
+                                // Player = MIN
+                                // pick the child with smaller value
+                                if (currentNode.getBoard().CurrentPlayer() != player) {
+                                        if (currentNode.getChild(i) != null) {
+                                                if (currentNode.getChild(i).getValue() < currentNode.getValue()) {
+                                                        currentNode.setValue(currentNode.getChild(i).getValue());
+                                                        best = i;
+                                                }
+                                        }
+                                        currentNode.deleteChild(i);
+
+                                        // beta cut off if our value is less than ANY
+                                        // computer/MAX parent value
+                                        Node nodePtr = currentNode;
+                                        while (nodePtr.getParent() != null) {
+                                                nodePtr = nodePtr.getParent();
+                                                if ((nodePtr.getBoard().CurrentPlayer() == player)
+                                                                && (currentNode.getValue() < nodePtr.getValue())) {
+                                                        nodePtr = null;
+                                                        return best;
+                                                }
+                                        }
+                                        nodePtr = null;
+                                }
+                        } catch (java.lang.OutOfMemoryError e) {
+                                System.out.println("OUT OF MEM");
+                                return -1;
                         }
-                        nodePtr = null;
-                    }
-                } catch (java.lang.OutOfMemoryError e) {
-                        System.out.println("OUT OF MEMORY");
-                        return -1;
                 }
-            }
-        return best; //return the best move.
-	}
+        return best;
+}
 
 	
 }
