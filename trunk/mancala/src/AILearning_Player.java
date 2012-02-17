@@ -10,12 +10,14 @@ public class AILearning_Player implements MancalaPlayer {
 	
 	private int player;
 	private int opponent;
+	private double learning_rate;
 	
 	RegressionLearning ai;
 
 	public AILearning_Player (int playerNum) {
 	  player = playerNum;
 	  opponent = 1 - player;
+	  learning_rate = 0.003;
 	 
 	  // initialize ai and load theta values.
 	  ai = new RegressionLearning(playerNum,"data.txt");
@@ -54,28 +56,24 @@ public class AILearning_Player implements MancalaPlayer {
 		
 	    if (gsCopy.getScore(player) > gsCopy.getScore(1-player)) {
 	        ai.setReward(gsCopy.getScore(player)-gsCopy.getScore(1-player));
-	        System.out.printf("Win \t ");
+	        System.out.printf("AI Win \t\n ");
 	    }
 	    else if (gsCopy.getScore(player) < gsCopy.getScore(1-player)) {
 	        ai.setReward(gsCopy.getScore(player)-gsCopy.getScore(1-player));
-	        System.out.printf("Loose \t ");
+	        System.out.printf("AI Loose \t\n ");
 	    }
 	    else  {
 	        ai.setReward(0);
-	        System.out.printf("Draw \t ");
+	        System.out.printf("Draw \t\n ");
 	    }
-	    if (ai.getGamesPlayed()==1) {
+	    if  (ai.hasNoSample()) {
 	    	ai.saveSample();
 	    }
 	    
-	    ai.gradientDescent((double)0.01/ai.getGamesPlayed());
+	    ai.gradientDescent((double)learning_rate/ai.getGamesPlayed());
 //	    ai.printThetas(ai.getWeight());
-//	    ai.addTotalHistory();
-	    ai.reset();
 	    ai.checkEvalFunction();
-//	    if(ai.getGamesPlayed()==100) {
-//	    	ai.checkLeantFucntion();
-//	    }
+	    ai.reset();
 	    ai.saveThetas("data.txt");
 	    return null;
 	}
