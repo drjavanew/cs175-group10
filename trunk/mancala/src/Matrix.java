@@ -36,6 +36,142 @@ public class Matrix {
     System.out.println();
   }
 
+  public int[][] createIdentityInt(int size) {
+	  int[][] a = new int[size][size];
+	  
+	  for (int i =0; i<size; i++) {
+		  a[i][i] = 1;
+	  }
+	  
+	  return a;
+  }
+  
+  public double[][] createIdentity(int size) {
+	  double[][] a = new double[size][size];
+	  
+	  for (int i =0; i<size; i++) {
+		  a[i][i] = 1;
+	  }
+	  
+	  return a;
+  }
+  
+  public double[][] convertArr2Matrix (double[] A) {
+	  int size = A.length;
+	  double[][] B = new double[1][size];
+	  System.arraycopy(A, 0, B[0], 0, size);
+	  return B;
+  }
+  
+  public int[][] convertArr2Matrix (int[] A) {
+	  int size = A.length;
+	  int[][] B = new int[1][size];
+	  System.arraycopy(A, 0, B[0], 0, size);
+	  return B;
+  }
+  
+  public int[][] resize(int A[][], int newrow, int newcol ) {
+	  	
+	  int [][] B = new int[newrow][newcol];
+	  if (A.length !=0) {
+	  for (int i =0; i< A.length; i++)
+		   System.arraycopy(A[i], 0, B[i], 0, A[i].length);
+	  }
+	  return B;
+  }
+  
+  public double[][] resize(double A[][], int newrow, int newcol ) {
+	  	
+	  double [][] B = new double[newrow][newcol];
+	  if (A.length !=0) {
+	  for (int i =0; i< A.length; i++)
+		   System.arraycopy(A[i], 0, B[i], 0, A[i].length);
+	  }
+	  return B;
+  }
+  
+  public double[][] subtract (double A[][], int B[][]){
+	  int row = A.length;
+	  int col = A[0].length;
+	  double[][] C = new double[row][col];
+	  
+	  for (int i=0; i<row; i++) 
+		  for (int j = 0; j<col;j++)
+			  C[i][j] = A[i][j] - B[i][j];
+	  
+	  return C;
+	  }
+  
+  public double[][] subtract (int A[][], int B[][]){
+	  int row = A.length;
+	  int col = A[0].length;
+	  double[][] C = new double[row][col];
+	  
+	  for (int i=0; i<row; i++) 
+		  for (int j = 0; j<col;j++)
+			  C[i][j] = A[i][j] - B[i][j];
+	  
+	  return C;
+	  }
+  
+  public double[][] subtract (double A[][], double B[][]){
+	  int row = A.length;
+	  int col = A[0].length;
+	  double[][] C = new double[row][col];
+	  
+	  for (int i=0; i<row; i++) 
+		  for (int j = 0; j<col;j++)
+			  C[i][j] = A[i][j] - B[i][j];
+	  
+	  return C;
+	  }
+  
+  public int[][] mulConst(int A[][], int constant){
+	  int row = A.length;
+	  int col = A[0].length;
+	  int[][] C = new int[row][col];
+	  
+	  for (int i=0; i<row; i++) 
+		  for (int j = 0; j<col;j++)
+			  C[i][j] = constant*A[i][j] ;
+	  
+	  return C;
+  }
+  
+  public double[][] mulConst(double A[][], int constant){
+	  int row = A.length;
+	  int col = A[0].length;
+	  double[][] C = new double[row][col];
+	  
+	  for (int i=0; i<row; i++) 
+		  for (int j = 0; j<col;j++)
+			  C[i][j] = constant*A[i][j] ;
+	  
+	  return C;
+  }
+  public void print(double e[][], String name) {
+	  System.out.println(name + ":");
+	  for (int i=0; i<e.length; ++i) 
+	    {
+	    	for (int j=0; j<e[0].length; ++j)
+	           System.out.print(e[i][j] +  "    ");
+	    	System.out.println();
+	    }
+	    System.out.println();
+  }
+  
+  public int[][] transpose(int A[][]) {
+	  int arow = A.length;
+	  int acol = A[0].length;
+	  
+	  int[][] B = new int[acol][arow];
+	  
+	  for (int i=0; i<acol; ++i) 
+	    	for (int j=0; j<arow; ++j)
+	    		B[i][j] = A[j][i];
+	  return B;
+  }
+  
   public double[][] transpose(double A[][]) {
 	  int arow = A.length;
 	  int acol = A[0].length;
@@ -48,6 +184,52 @@ public class Matrix {
 	  return B;
   }
   
+  public int[][] multiply(int A[][], int B[][]) {
+	  int arow = A.length;
+	  int acol = A[0].length;
+	  int brow = B.length;
+	  int bcol = B[0].length;
+	  int sum;
+	  int[][] C = new int[arow][bcol];
+	  
+	  
+      int[] bcolj = new int[brow];
+      for (int j = 0; j < bcol; j++) {
+          for (int k = 0; k < brow; k++) bcolj[k] = B[k][j];
+          for (int i = 0; i < arow; i++) {
+              int[] arowi = A[i];
+              sum = 0;
+              for (int k = 0; k < acol; k++) {
+                  sum += arowi[k] * bcolj[k];
+              }
+              C[i][j] = sum;
+          }
+      }
+	return C;
+  }
+  
+  public double[][] multiply(double A[][], int B[][]) {
+	  int arow = A.length;
+	  int acol = A[0].length;
+	  int brow = B.length;
+	  int bcol = B[0].length;
+	  double[][] C = new double[arow][bcol];
+	  
+	  
+      int[] bcolj = new int[brow];
+      for (int j = 0; j < bcol; j++) {
+          for (int k = 0; k < brow; k++) bcolj[k] = B[k][j];
+          for (int i = 0; i < arow; i++) {
+              double[] arowi = A[i];
+              double sum = 0.0;
+              for (int k = 0; k < acol; k++) {
+                  sum += arowi[k] * bcolj[k];
+              }
+              C[i][j] = sum;
+          }
+      }
+	return C;
+  }
   public double[][] multiply(double A[][], double B[][]) {
 	  int arow = A.length;
 	  int acol = A[0].length;
@@ -152,4 +334,6 @@ public class Matrix {
       }
     }
   }
+
+
 }

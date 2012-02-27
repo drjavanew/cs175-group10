@@ -91,6 +91,12 @@ public class MinMaxAB_Player implements MancalaPlayer
 				return board.getScore(1) - board.getScore(0);
 		}
 
+		@Override
+		public Object actionsBeforeDeletion() {
+			
+			return null;
+		}
+
 		
 
 }

@@ -110,17 +110,6 @@ public class RegressionState {
 				}
 			return sum;
 			
-		/* Feature 4: # of stones in 2 closet slots. 
-		case 4:
-			return board.stonesAt(player, 4) + board.stonesAt(player, 5);
-		
-		 Feature 5: # of stones in 2 middle slots. 
-		case 5:
-			return board.stonesAt(player, 2) + board.stonesAt(player, 3);
-		
-		 Feature 6: # of stones in 2 farthest slots. 
-		case 6:
-			return board.stonesAt(player, 0) + board.stonesAt(player, 1);*/
 		
 		
 		default:
