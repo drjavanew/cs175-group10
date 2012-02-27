@@ -1,3 +1,6 @@
+/* Represent the node in tree structure to search for best move using MinMax
+ * Alpha Beta
+ */
 import java.util.Vector;
 
 public class Node {

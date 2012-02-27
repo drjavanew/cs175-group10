@@ -47,13 +47,13 @@ public class MinMaxNaive_Player implements MancalaPlayer {
 	    gsCopy.computeFinalScore();
 		
 	    if (gsCopy.getScore(player) > gsCopy.getScore(1-player)) {
-	        System.out.printf("MinMax Win \t \n");
+	        System.out.printf("MinMax Win \n");
 	    }
 	    else if (gsCopy.getScore(player) < gsCopy.getScore(1-player)) {
-	        System.out.printf("MinMax Loose \t\n ");
+	        System.out.printf("MinMax Loose \n ");
 	    }
 	    else  {
-	        System.out.printf("Draw \t \n");
+	        System.out.printf("Draw \n");
 	    }
 	    
 	    return null;
@@ -155,4 +155,10 @@ public class MinMaxNaive_Player implements MancalaPlayer {
                 }
         return best; //return the best move
 }
+
+	@Override
+	public Object actionsBeforeDeletion() {
+		
+		return null;
+	}
 	}

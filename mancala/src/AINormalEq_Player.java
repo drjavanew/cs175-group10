@@ -1,25 +1,24 @@
 /*
  * 
  * 
- * class name: AILearning_Player
+ * class name: AI Version 2 using normal equation 
  * description: 
  */
 
-public class AILearning_Player implements MancalaPlayer {
+public class AINormalEq_Player implements MancalaPlayer {
 	
 	private int player;
 	private int opponent;
-	private double learning_rate;
 	
-	private RegressionLearning ai;
+	private NormalEquation ai;
 
-	public AILearning_Player (int playerNum) {
+	public AINormalEq_Player (int playerNum) {
 	  player = playerNum;
 	  opponent = 1 - player;
-	  learning_rate = 0.003;
 	 
 	  // initialize ai and load theta values.
-	  ai = new RegressionLearning(playerNum,"data.txt");
+	  ai = new NormalEquation(playerNum,"NEdata.txt");
+	 
 	  
 	}
 	
@@ -30,8 +29,8 @@ public class AILearning_Player implements MancalaPlayer {
 		bestMove = ai.findBestMove(evalNode, bestMove);
 		
 		if (bestMove != -1) {
-			RegressionState aState = new RegressionState(gs.copy(),player);
-			ai.updateHistory(aState);
+			ai.updateHistory(gs.copy());
+			
 		}
 		 
 		return bestMove;
@@ -47,37 +46,32 @@ public class AILearning_Player implements MancalaPlayer {
 //	    Make a copy to compute the final score
 	    MancalaGameState gsCopy = gs.copy();
 	    gsCopy.computeFinalScore();
-	    RegressionState aState = new RegressionState(gsCopy,player);
-		ai.updateHistory(aState);
-		ai.incGamesPlayed();
+	    
+		ai.updateHistory(gsCopy);
+		
 		int finalscore = gsCopy.getScore(player)-gsCopy.getScore(opponent);
 		ai.setReward(finalscore);
 		
 	    if (finalscore > 0) {
-	        System.out.printf("AILearn Win \n ");
+	        System.out.println("AIV2 Win");
 	    }
 	    else if (finalscore < 0) {
-	       
-	        System.out.printf("AILearn Loose \t\n ");
+	        System.out.println("AIV2 Loose");
 	    }
 	    else  {
-	        System.out.printf("Draw \t\n ");
+	        System.out.println("Draw");
 	    }
 	    
-	    if  (ai.hasNoSample()) {
-	    	ai.saveSample();
-	    }
 	    
-	    ai.gradientDescent((double)learning_rate/ai.getGamesPlayed());
+	    ai.learnWeights();
 //	    ai.printThetas(ai.getWeight());
-	    ai.checkEvalFunction();
 	    ai.reset();
 	    return null;
 	}
 
 	@Override
 	public Object actionsBeforeDeletion() {
-		ai.saveThetas("data.txt");
+		ai.cleanup();
 		return null;
 	}
 
