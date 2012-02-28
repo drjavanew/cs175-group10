@@ -17,7 +17,6 @@ public class Node {
 		this.depth = depthVal;
 		this.parent = null;
 		this.children = new Vector<Node>();
-
 	}
 
 	public int getId() {

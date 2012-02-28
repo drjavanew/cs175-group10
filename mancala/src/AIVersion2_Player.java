@@ -2,7 +2,7 @@
  * 
  * 
  * class name: AI Version 2 using least square 
- * description: TO BE FIXED!!!!
+ * description: No longer used.
  */
 
 public class AIVersion2_Player implements MancalaPlayer {
@@ -69,6 +69,12 @@ public class AIVersion2_Player implements MancalaPlayer {
 	    ai.reset();
 	    ai.saveThetas("LQdata.txt");
 	    return null;
+	}
+
+	@Override
+	public Object actionsBeforeDeletion() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

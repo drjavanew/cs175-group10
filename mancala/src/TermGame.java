@@ -54,30 +54,30 @@ public class TermGame {
 
     public void play() throws Exception {
         while (!gs.checkEndGame()) {
-//            gs.printState();
-//            System.out.print("Player " + gs.CurrentPlayer() + "'s move: ");
+            gs.printState();
+            System.out.print("Player " + gs.CurrentPlayer() + "'s move: ");
             int move = player[gs.CurrentPlayer()].getMove(gs);
             while (!gs.validMove(move)) {
                 System.out.println("Invalid move!");
                 System.out.println("Player " + gs.CurrentPlayer() + "'s move: ");
                 move = player[gs.CurrentPlayer()].getMove(gs);
             }
-//            System.out.println(move);
+            System.out.println(move);
             gs.play(move);
         }
-//        gs.printState();
-//        System.out.println("Performing player 0 post game actions...");
+        gs.printState();
+        System.out.println("Performing player 0 post game actions...");
         player[0].postGameActions(gs);
-//        System.out.println("Performing player 1 post game actions...");
+        System.out.println("Performing player 1 post game actions...");
         player[1].postGameActions(gs);
 
         gs.computeFinalScore();
-//        System.out.println("After moving in remaining pieces: ");
-//        gs.printState();
+        System.out.println("After moving in remaining pieces: ");
+        gs.printState();
 
-//        System.out.println("Player 0 score: " + gs.getScore(0));
-//        System.out.println("Player 1 score: " + gs.getScore(1));
-//        System.out.println();
+        System.out.println("Player 0 score: " + gs.getScore(0));
+        System.out.println("Player 1 score: " + gs.getScore(1));
+        System.out.println();
         if (gs.getScore(0) > gs.getScore(1)) win++;
         else if (gs.getScore(0) < gs.getScore(1)) loose++;
         else draw++;
@@ -155,7 +155,7 @@ public class TermGame {
     	}
     }
     public static void runTest () {
-    	int games = 1;
+    	int games = 3;
 //    	TestTemplate("R1.txt", "MinMaxAB", "AIGraDescent", games);
 //    	TestTemplate("R2.txt", "AIGraDescent","MinMaxAB", games);
 //    	TestTemplate("R3.txt", "MinMaxNaive", "AIGraDescent", games);
@@ -167,7 +167,9 @@ public class TermGame {
 //    	TestTemplate("R9.txt", "AINormalEq", "AIGraDescent", games);
 //    	TestTemplate("R0.txt", "AIGraDescent","AINormalEq", games);
 //    	
-    	TestTemplate("Y1.txt", "Khanh", "random", games);
+    	TestTemplate("O1.txt", "Group10", "group1", games);
+    	TestTemplate("O2.txt", "group1", "Group10", games);
+//    	TestTemplate("Y2.txt", "interactive", "Herlihy", games);
 //    	TestTemplate("T2.txt", "AINormalEq","MinMaxAB", games);
 //    	TestTemplate("T3.txt", "MinMaxNaive", "AINormalEq", games);
 //    	TestTemplate("T4.txt", "AINormalEq","MinMaxNaive", games);
