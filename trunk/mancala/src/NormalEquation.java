@@ -396,6 +396,12 @@ public class NormalEquation {
         return best; //return the best move
 }
 
+	public boolean isNew() {
+		if (gameHistory.size() <=2) 
+		return true;
+		else return false;
+	}
+
 	
 }
 

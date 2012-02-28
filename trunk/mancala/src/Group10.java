@@ -26,7 +26,7 @@ public class Group10 {
 	private int reward;
 	private boolean inputFail;
 
-	private int cutoffDepth; //search depth
+	
 	
 	/*
 	 * Game History contains each state of a turn within a single game.
@@ -60,7 +60,7 @@ public class Group10 {
 	
 	public Group10(int playerNum, String filename) {
 		this.player = playerNum;
-		cutoffDepth = 9;
+		
 			//read and set weights of each feature from a file.
 			try {
 				String sCurrentLine;
@@ -101,6 +101,18 @@ public class Group10 {
 			}
 
 		}
+	
+	
+	public boolean isNew() {
+		if ((gameHistory.size() == 1) || (gameHistory.size() == 2))  {
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 	
 	public void cleanup() {
 		

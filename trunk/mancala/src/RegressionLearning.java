@@ -319,8 +319,10 @@ public class RegressionLearning {
 	}
 	
 
-	public void updateHistory(RegressionState state) {
-		gameHistory.add(state);
+	public void updateHistory(MancalaGameState gs) {
+		
+		RegressionState aState = new RegressionState(gs.copy(),player);
+		gameHistory.add(aState);
 	}
 	
 	/* Gets the list of weights */
@@ -425,6 +427,14 @@ public class RegressionLearning {
                 }
         return best; //return the best move
 }
+
+
+
+	public boolean isNew() {
+		if (gameHistory.size() <=2) 
+			return true;
+			else return false;
+	}
 
 	
 }

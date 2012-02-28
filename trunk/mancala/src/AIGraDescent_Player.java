@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /*
  * 
  * 
@@ -10,6 +12,7 @@ public class AIGraDescent_Player implements MancalaPlayer {
 	private int player;
 	private int opponent;
 	private double learning_rate;
+	boolean firstMoveofFirstPlayer =false;
 	
 	private GradientDescent ai;
 
@@ -23,17 +26,76 @@ public class AIGraDescent_Player implements MancalaPlayer {
 	 
 	  
 	}
+	/* This function's logic is based on the Mancala game analysis located here:
+     * http://fritzdooley.com/mancala/6_mancala_best_opening_move.html
+     * 
+     * But desired functionality may be changed to personal tastes
+     */
+    boolean[] DesiredFirstMove = { false /* 0 */, false /* 1 */, true /* 2 */,
+                                                             false /* 3 */, false /* 4 */, true /* 5 */ };
+    boolean[] DesiredBonusMove = { false /* 0 */, false /* 1 */, false /* WILL NEVER BE CALLED */,
+                     true /* 3 */, true /* 4 */, true /* 5 */ };
+    
+    public boolean usePieMove(MancalaGameState gs)
+    {
+            boolean takePieMove = false;
+            if(gs.validMove(KalahPieGameState.PIE_MOVE))
+            {
+                    //Determine our test set. If they got a bonus move, use the bonus set, otherwise use first move set.
+                    boolean[] TestSet = ((DesiredFirstMove[2] && gs.stonesAt(opponent, 2) == 1) ? DesiredBonusMove : DesiredFirstMove);
+                    
+                    for(int i = 0; i < 6; i++)
+                    {
+                            if(TestSet[i] && gs.stonesAt(opponent, i) == 0)
+                            {
+                                    takePieMove = true;
+                                    break;
+                            }
+                    }
+                    
+            }
+            return takePieMove;
+    }
+
+	
+		
+		
+		
+		
+		
+		
 	
 	public int getMove(MancalaGameState gs) throws Exception {
 
+
+
+		ai.updateHistory(gs.copy());
+		if((player == 1) && (usePieMove(gs))) {
+            return -1;
+		}
+		
+		if ((player== 0) && (ai.isNew())) {
+			
+			if (firstMoveofFirstPlayer == false) {
+			    firstMoveofFirstPlayer = true;
+			    return 2;
+			}
+			else {
+				firstMoveofFirstPlayer =false;
+				Random rand = new Random();
+				int val = rand.nextInt(10);
+				if (val >=5) return 1;
+				else return 3;
+			}
+			 
+			
+		}
+		
 		int bestMove = -1;
 		Node evalNode = new Node(gs.copy(), 0);
 		bestMove = ai.findBestMove(evalNode, bestMove);
 		
-		if (bestMove != -1) {
-			ai.updateHistory(gs.copy());
-		}
-		 
+			 
 		return bestMove;
 	
 	}
@@ -68,6 +130,7 @@ public class AIGraDescent_Player implements MancalaPlayer {
 	    ai.learnWeights((double)learning_rate/ai.getGamesPlayed());
 //	    ai.printThetas(ai.getWeight());
 	    ai.reset();
+	    firstMoveofFirstPlayer =false;
 	    return null;
 	}
 

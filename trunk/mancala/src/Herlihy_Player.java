@@ -1,3 +1,4 @@
+
 public class Herlihy_Player implements MancalaPlayer {
 
 	private int player;
@@ -10,42 +11,43 @@ public class Herlihy_Player implements MancalaPlayer {
 	}
 	
 	/* This function's logic is based on the Mancala game analysis located here:
-	 * http://fritzdooley.com/mancala/6_mancala_best_opening_move.html
-	 * 
-	 * But desired functionality may be changed to personal tastes
-	 */
-	boolean[] DesiredFirstMove = { false /* 0 */, false /* 1 */, true /* 2 */,
-								 false /* 3 */, false /* 4 */, true /* 5 */ };
-	boolean[] DesiredBonusMove = { false /* 0 */, false /* 1 */, false /* WILL NEVER BE CALLED */,
-			 true /* 3 */, true /* 4 */, true /* 5 */ };
-	
-	public boolean usePieMove(MancalaGameState gs)
-	{
-		boolean takePieMove = false;
-		if(gs.validMove(KalahPieGameState.PIE_MOVE))
-		{
-			//Determine our test set. If they got a bonus move, use the bonus set, otherwise use first move set.
-			boolean[] TestSet = ((DesiredFirstMove[2] && gs.stonesAt(opponent, 2) == 1) ? DesiredBonusMove : DesiredFirstMove);
-			
-			for(int i = 0; i < 6; i++)
-			{
-				if(TestSet[i] && gs.stonesAt(opponent, i) == 0)
-				{
-					takePieMove = true;
-					break;
-				}
-			}
-			
-		}
-		return takePieMove;
-	}
+     * http://fritzdooley.com/mancala/6_mancala_best_opening_move.html
+     * 
+     * But desired functionality may be changed to personal tastes
+     */
+    boolean[] DesiredFirstMove = { false /* 0 */, false /* 1 */, true /* 2 */,
+                                                             false /* 3 */, false /* 4 */, true /* 5 */ };
+    boolean[] DesiredBonusMove = { false /* 0 */, false /* 1 */, false /* WILL NEVER BE CALLED */,
+                     true /* 3 */, true /* 4 */, true /* 5 */ };
+    
+    public boolean usePieMove(MancalaGameState gs)
+    {
+            boolean takePieMove = false;
+            if(gs.validMove(KalahPieGameState.PIE_MOVE))
+            {
+                    //Determine our test set. If they got a bonus move, use the bonus set, otherwise use first move set.
+                    boolean[] TestSet = ((DesiredFirstMove[2] && gs.stonesAt(opponent, 2) == 1) ? DesiredBonusMove : DesiredFirstMove);
+                    
+                    for(int i = 0; i < 6; i++)
+                    {
+                            if(TestSet[i] && gs.stonesAt(opponent, i) == 0)
+                            {
+                                    takePieMove = true;
+                                    break;
+                            }
+                    }
+                    
+            }
+            return takePieMove;
+    }
+
 	
 	@Override
 	public int getMove(MancalaGameState gs) throws Exception {
 		
 		if(usePieMove(gs))
-			return -1;
-		
+            return -1;
+
 		int currentMove = -1;
 		int currentValue = Integer.MIN_VALUE;
 		
@@ -55,7 +57,7 @@ public class Herlihy_Player implements MancalaPlayer {
 			{
 				MancalaGameState gs_copy = gs.copy().play(i);
 				int tempValue = getMiniMaxABValue(gs_copy, 10, Integer.MIN_VALUE, Integer.MAX_VALUE, player);
-				if( tempValue > currentValue || currentMove == -1)
+				if( tempValue >= currentValue)
 				{
 					currentValue = tempValue;
 					currentMove = i;
@@ -66,7 +68,7 @@ public class Herlihy_Player implements MancalaPlayer {
 		return currentMove;
 	}
 	
-	private static int callCount = 0, returnCount = 0;
+	private static long callCount = 0, returnCount = 0;
 	
 	private int getMiniMaxABValue(MancalaGameState gs, int depth, int alpha, int beta, int abPlayer) throws Exception
 	{
@@ -136,8 +138,14 @@ public class Herlihy_Player implements MancalaPlayer {
 	@Override
 	public Object postGameActions(MancalaGameState gs) {
 		gs.checkEndGame();
-		System.out.println("Final Count: " + callCount);
-		System.out.println("Return Count: " + returnCount);
+//		System.out.println("Final Count: " + callCount);
+//		System.out.println("Return Count: " + returnCount);
+		return null;
+	}
+
+	@Override
+	public Object actionsBeforeDeletion() {
+		
 		return null;
 	}
 

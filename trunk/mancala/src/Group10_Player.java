@@ -1,3 +1,7 @@
+import java.util.Random;
+
+// This AI is not working well because of the AB
+
 
 public class Group10_Player implements MancalaPlayer {
 
@@ -5,16 +9,74 @@ public class Group10_Player implements MancalaPlayer {
 	private int opponent;
     private Group10 ai;
     private int cutoff_depth;
-    
+    private boolean firstMoveofFirstPlayer =false; 
+   
 	public Group10_Player (int playerNum) {
 	  player = playerNum;
 	  opponent = 1 - player;
 	  cutoff_depth = 10;
 	  ai = new Group10(playerNum,"Kdata.txt");
+	  
 	}
 	
+	/* This function's logic is based on the Mancala game analysis located here:
+     * http://fritzdooley.com/mancala/6_mancala_best_opening_move.html
+     * 
+     * But desired functionality may be changed to personal tastes
+     */
+    boolean[] DesiredFirstMove = { false /* 0 */, false /* 1 */, true /* 2 */,
+                                                             false /* 3 */, false /* 4 */, true /* 5 */ };
+    boolean[] DesiredBonusMove = { false /* 0 */, false /* 1 */, false /* WILL NEVER BE CALLED */,
+                     true /* 3 */, true /* 4 */, true /* 5 */ };
+    
+    public boolean usePieMove(MancalaGameState gs)
+    {
+            boolean takePieMove = false;
+            if(gs.validMove(KalahPieGameState.PIE_MOVE))
+            {
+                    //Determine our test set. If they got a bonus move, use the bonus set, otherwise use first move set.
+                    boolean[] TestSet = ((DesiredFirstMove[2] && gs.stonesAt(opponent, 2) == 1) ? DesiredBonusMove : DesiredFirstMove);
+                    
+                    for(int i = 0; i < 6; i++)
+                    {
+                            if(TestSet[i] && gs.stonesAt(opponent, i) == 0)
+                            {
+                                    takePieMove = true;
+                                    break;
+                            }
+                    }
+                    
+            }
+            return takePieMove;
+    }
+
 	@Override
 	public int getMove(MancalaGameState gs) throws Exception {
+		
+		
+		ai.updateHistory(gs.copy());
+		
+		
+		if((player == 1) && (usePieMove(gs))) {
+            return -1;
+		}
+		
+		if ((player== 0) && (ai.isNew())) {
+			if (firstMoveofFirstPlayer == false) {
+			    firstMoveofFirstPlayer = true;
+			    return 2;
+			}
+			else {
+				firstMoveofFirstPlayer =false;
+				Random rand = new Random();
+				int val = rand.nextInt(10);
+				if (val >=5) return 1;
+				else return 3;
+			}
+			 
+			
+		}
+		
 		int currentMove = -1;
 		double currentValue = Float.NEGATIVE_INFINITY;
 		
@@ -32,7 +94,6 @@ public class Group10_Player implements MancalaPlayer {
 			}
 		}
 		
-		ai.updateHistory(gs.copy());
 		
 		return currentMove;
 	}
@@ -110,6 +171,7 @@ public class Group10_Player implements MancalaPlayer {
 	    ai.learnWeights();
 //	    ai.printThetas(ai.getWeight());
 	    ai.reset();
+	    
 	    return null;
 	}
 
