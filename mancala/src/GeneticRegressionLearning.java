@@ -378,17 +378,29 @@ public class GeneticRegressionLearning {
 		// TODO Auto-generated method stub
 		Random ran = new Random();
 		//random mutate a FEATURE
-		int choice = ran.nextInt(TOTAL_FEATURES);
+		int choice = ran.nextInt(TOTAL_FEATURES);	
+		int mutationChoice = ran.nextInt(5);
+		int loop = ran.nextInt(4);
 		
-		boolean pos = ran.nextBoolean();
-		if (pos)
+		for (int i = 0; i < loop; i++)
 		{
-		//	System.out.print(weight[choice]);
-			weight[choice] += (double)ran.nextInt(10000000) / 100000;
-		//	System.out.println("mutate to " + weight[choice]);
+			if (mutationChoice == 0)
+			{
+			//	System.out.print(weight[choice]);
+				weight[choice] += (double)ran.nextInt(1000000) / 1000000000;
+			//	System.out.println("mutate to " + weight[choice]);
+			}
+			else if (mutationChoice == 1)
+				weight[choice] -= (double)ran.nextInt(1000000) / 1000000000;
+			else if (mutationChoice == 2)
+				weight[choice] *= -1;
+			else if (mutationChoice == 3)
+				weight[choice] *= ran.nextInt(20000000) / 100000000;
+			else if (mutationChoice == 4 && loop == 0)
+				weight[choice] = 0;
 		}
-		else 
-			weight[choice] -= (double)ran.nextInt(10000000) / 100000;
+			
+			
 	}
 
 	
