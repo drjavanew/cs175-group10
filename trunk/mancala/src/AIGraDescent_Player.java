@@ -68,33 +68,33 @@ public class AIGraDescent_Player implements MancalaPlayer {
 	public int getMove(MancalaGameState gs) throws Exception {
 
 
-
-		ai.updateHistory(gs.copy());
-		if((player == 1) && (usePieMove(gs))) {
-            return -1;
-		}
-		
-		if ((player== 0) && (ai.isNew())) {
-			
-			if (firstMoveofFirstPlayer == false) {
-			    firstMoveofFirstPlayer = true;
-			    return 2;
-			}
-			else {
-				firstMoveofFirstPlayer =false;
-				Random rand = new Random();
-				int val = rand.nextInt(10);
-				if (val >=5) return 1;
-				else return 3;
-			}
-			 
-			
-		}
+//
+//		ai.updateHistory(gs.copy());
+//		if((player == 1) && (usePieMove(gs))) {
+//            return -1;
+//		}
+//		
+//		if ((player== 0) && (ai.isNew())) {
+//			
+//			if (firstMoveofFirstPlayer == false) {
+//			    firstMoveofFirstPlayer = true;
+//			    return 2;
+//			}
+//			else {
+//				firstMoveofFirstPlayer =false;
+//				Random rand = new Random();
+//				int val = rand.nextInt(10);
+//				if (val >=5) return 1;
+//				else return 3;
+//			}
+//			 
+//			
+//		}
 		
 		int bestMove = -1;
 		Node evalNode = new Node(gs.copy(), 0);
 		bestMove = ai.findBestMove(evalNode, bestMove);
-		
+		ai.updateHistory(gs.copy().play(bestMove));
 			 
 		return bestMove;
 	
@@ -138,6 +138,21 @@ public class AIGraDescent_Player implements MancalaPlayer {
 	public Object actionsBeforeDeletion() {
 		ai.cleanup();
 		return null;
+	}
+
+
+
+
+
+
+
+
+
+	@Override
+	public void reset() {
+		ai.reset();
+		firstMoveofFirstPlayer =false;
+		
 	}
 
 }

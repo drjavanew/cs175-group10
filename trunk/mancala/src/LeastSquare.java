@@ -178,7 +178,7 @@ public class LeastSquare {
                 currentNode.setValue(Float.NEGATIVE_INFINITY);
 
 	//Check each pit on your side to find the best move. */
-        for (int i = 0; i < 6 ; i++)
+        for (int i = -1; i < 6 ; i++)
                 if (currentNode.getBoard().validMove(i)) {
                         try {
                                 MancalaGameState newBoard = currentNode.getBoard().copy() ;

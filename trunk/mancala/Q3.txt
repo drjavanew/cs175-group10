@@ -1,0 +1,18 @@
+MinMaxNaive vs Team8
+Iteration 1: 
+Player 0 score: 	32
+Player 1 score: 	16
+
+Iteration 2: 
+Player 0 score: 	32
+Player 1 score: 	16
+
+Iteration 3: 
+Player 0 score: 	32
+Player 1 score: 	16
+
+Win = 3
+Loose = 0
+Draw = 0
+=====================================
+

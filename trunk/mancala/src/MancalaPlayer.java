@@ -1,6 +1,8 @@
 interface MancalaPlayer
 {
 
+public void reset(); 
+
 public int getMove(MancalaGameState gs) throws Exception;
 
 // A general method that allows the class to do something based on 

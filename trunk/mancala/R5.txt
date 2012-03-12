@@ -1,0 +1,4634 @@
+Herlihy vs AIGraDescent
+Iteration 1: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 2: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 3: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 4: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 5: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 6: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 7: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 8: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 9: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 10: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 11: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 12: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 13: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 14: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 15: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 16: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 17: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 18: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 19: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 20: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 21: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 22: 
+Player 0 score: 	15
+Player 1 score: 	33
+
+Iteration 23: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 24: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 25: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 26: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 27: 
+Player 0 score: 	12
+Player 1 score: 	36
+
+Iteration 28: 
+Player 0 score: 	28
+Player 1 score: 	20
+
+Iteration 29: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 30: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 31: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 32: 
+Player 0 score: 	20
+Player 1 score: 	28
+
+Iteration 33: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 34: 
+Player 0 score: 	15
+Player 1 score: 	33
+
+Iteration 35: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 36: 
+Player 0 score: 	11
+Player 1 score: 	37
+
+Iteration 37: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 38: 
+Player 0 score: 	14
+Player 1 score: 	34
+
+Iteration 39: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 40: 
+Player 0 score: 	15
+Player 1 score: 	33
+
+Iteration 41: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 42: 
+Player 0 score: 	11
+Player 1 score: 	37
+
+Iteration 43: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 44: 
+Player 0 score: 	14
+Player 1 score: 	34
+
+Iteration 45: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 46: 
+Player 0 score: 	15
+Player 1 score: 	33
+
+Iteration 47: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 48: 
+Player 0 score: 	11
+Player 1 score: 	37
+
+Iteration 49: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 50: 
+Player 0 score: 	14
+Player 1 score: 	34
+
+Iteration 51: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 52: 
+Player 0 score: 	15
+Player 1 score: 	33
+
+Iteration 53: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 54: 
+Player 0 score: 	11
+Player 1 score: 	37
+
+Iteration 55: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 56: 
+Player 0 score: 	15
+Player 1 score: 	33
+
+Iteration 57: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 58: 
+Player 0 score: 	22
+Player 1 score: 	26
+
+Iteration 59: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 60: 
+Player 0 score: 	22
+Player 1 score: 	26
+
+Iteration 61: 
+Player 0 score: 	10
+Player 1 score: 	38
+
+Iteration 62: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 63: 
+Player 0 score: 	17
+Player 1 score: 	31
+
+Iteration 64: 
+Player 0 score: 	15
+Player 1 score: 	33
+
+Iteration 65: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 66: 
+Player 0 score: 	35
+Player 1 score: 	13
+
+Iteration 67: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 68: 
+Player 0 score: 	25
+Player 1 score: 	23
+
+Iteration 69: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 70: 
+Player 0 score: 	13
+Player 1 score: 	35
+
+Iteration 71: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 72: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 73: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 74: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 75: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 76: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 77: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 78: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 79: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 80: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 81: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 82: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 83: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 84: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 85: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 86: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 87: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 88: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 89: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 90: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 91: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 92: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 93: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 94: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 95: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 96: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 97: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 98: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 99: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 100: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 101: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 102: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 103: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 104: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 105: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 106: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 107: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 108: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 109: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 110: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 111: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 112: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 113: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 114: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 115: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 116: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 117: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 118: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 119: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 120: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 121: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 122: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 123: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 124: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 125: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 126: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 127: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 128: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 129: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 130: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 131: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 132: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 133: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 134: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 135: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 136: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 137: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 138: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 139: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 140: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 141: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 142: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 143: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 144: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 145: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 146: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 147: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 148: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 149: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 150: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 151: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 152: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 153: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 154: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 155: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 156: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 157: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 158: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 159: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 160: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 161: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 162: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 163: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 164: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 165: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 166: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 167: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 168: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 169: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 170: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 171: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 172: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 173: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 174: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 175: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 176: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 177: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 178: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 179: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 180: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 181: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 182: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 183: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 184: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 185: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 186: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 187: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 188: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 189: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 190: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 191: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 192: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 193: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 194: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 195: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 196: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 197: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 198: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 199: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 200: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 201: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 202: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 203: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 204: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 205: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 206: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 207: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 208: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 209: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 210: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 211: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 212: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 213: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 214: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 215: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 216: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 217: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 218: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 219: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 220: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 221: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 222: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 223: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 224: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 225: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 226: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 227: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 228: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 229: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 230: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 231: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 232: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 233: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 234: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 235: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 236: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 237: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 238: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 239: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 240: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 241: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 242: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 243: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 244: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 245: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 246: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 247: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 248: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 249: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 250: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 251: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 252: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 253: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 254: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 255: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 256: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 257: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 258: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 259: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 260: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 261: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 262: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 263: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 264: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 265: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 266: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 267: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 268: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 269: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 270: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 271: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 272: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 273: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 274: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 275: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 276: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 277: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 278: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 279: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 280: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 281: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 282: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 283: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 284: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 285: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 286: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 287: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 288: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 289: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 290: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 291: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 292: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 293: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 294: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 295: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 296: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 297: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 298: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 299: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 300: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 301: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 302: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 303: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 304: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 305: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 306: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 307: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 308: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 309: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 310: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 311: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 312: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 313: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 314: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 315: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 316: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 317: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 318: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 319: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 320: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 321: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 322: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 323: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 324: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 325: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 326: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 327: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 328: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 329: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 330: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 331: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 332: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 333: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 334: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 335: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 336: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 337: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 338: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 339: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 340: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 341: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 342: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 343: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 344: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 345: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 346: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 347: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 348: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 349: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 350: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 351: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 352: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 353: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 354: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 355: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 356: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 357: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 358: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 359: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 360: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 361: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 362: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 363: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 364: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 365: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 366: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 367: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 368: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 369: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 370: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 371: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 372: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 373: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 374: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 375: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 376: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 377: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 378: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 379: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 380: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 381: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 382: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 383: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 384: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 385: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 386: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 387: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 388: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 389: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 390: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 391: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 392: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 393: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 394: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 395: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 396: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 397: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 398: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 399: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 400: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 401: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 402: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 403: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 404: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 405: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 406: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 407: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 408: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 409: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 410: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 411: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 412: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 413: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 414: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 415: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 416: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 417: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 418: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 419: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 420: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 421: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 422: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 423: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 424: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 425: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 426: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 427: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 428: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 429: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 430: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 431: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 432: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 433: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 434: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 435: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 436: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 437: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 438: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 439: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 440: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 441: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 442: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 443: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 444: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 445: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 446: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 447: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 448: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 449: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 450: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 451: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 452: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 453: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 454: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 455: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 456: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 457: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 458: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 459: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 460: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 461: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 462: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 463: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 464: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 465: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 466: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 467: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 468: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 469: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 470: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 471: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 472: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 473: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 474: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 475: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 476: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 477: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 478: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 479: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 480: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 481: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 482: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 483: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 484: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 485: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 486: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 487: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 488: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 489: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 490: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 491: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 492: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 493: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 494: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 495: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 496: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 497: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 498: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 499: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 500: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 501: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 502: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 503: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 504: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 505: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 506: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 507: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 508: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 509: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 510: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 511: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 512: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 513: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 514: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 515: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 516: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 517: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 518: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 519: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 520: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 521: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 522: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 523: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 524: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 525: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 526: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 527: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 528: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 529: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 530: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 531: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 532: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 533: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 534: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 535: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 536: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 537: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 538: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 539: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 540: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 541: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 542: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 543: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 544: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 545: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 546: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 547: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 548: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 549: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 550: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 551: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 552: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 553: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 554: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 555: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 556: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 557: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 558: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 559: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 560: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 561: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 562: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 563: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 564: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 565: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 566: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 567: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 568: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 569: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 570: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 571: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 572: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 573: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 574: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 575: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 576: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 577: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 578: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 579: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 580: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 581: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 582: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 583: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 584: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 585: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 586: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 587: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 588: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 589: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 590: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 591: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 592: 
+Player 0 score: 	24
+Player 1 score: 	24
+
+Iteration 593: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 594: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 595: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 596: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 597: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 598: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 599: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 600: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 601: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 602: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 603: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 604: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 605: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 606: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 607: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 608: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 609: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 610: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 611: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 612: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 613: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 614: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 615: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 616: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 617: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 618: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 619: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 620: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 621: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 622: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 623: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 624: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 625: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 626: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 627: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 628: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 629: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 630: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 631: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 632: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 633: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 634: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 635: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 636: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 637: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 638: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 639: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 640: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 641: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 642: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 643: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 644: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 645: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 646: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 647: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 648: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 649: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 650: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 651: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 652: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 653: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 654: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 655: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 656: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 657: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 658: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 659: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 660: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 661: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 662: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 663: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 664: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 665: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 666: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 667: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 668: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 669: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 670: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 671: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 672: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 673: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 674: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 675: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 676: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 677: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 678: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 679: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 680: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 681: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 682: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 683: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 684: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 685: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 686: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 687: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 688: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 689: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 690: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 691: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 692: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 693: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 694: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 695: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 696: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 697: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 698: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 699: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 700: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 701: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 702: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 703: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 704: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 705: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 706: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 707: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 708: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 709: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 710: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 711: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 712: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 713: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 714: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 715: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 716: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 717: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 718: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 719: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 720: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 721: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 722: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 723: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 724: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 725: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 726: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 727: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 728: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 729: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 730: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 731: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 732: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 733: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 734: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 735: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 736: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 737: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 738: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 739: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 740: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 741: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 742: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 743: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 744: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 745: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 746: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 747: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 748: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 749: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 750: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 751: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 752: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 753: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 754: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 755: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 756: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 757: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 758: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 759: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 760: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 761: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 762: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 763: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 764: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 765: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 766: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 767: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 768: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 769: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 770: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 771: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 772: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 773: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 774: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 775: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 776: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 777: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 778: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 779: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 780: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 781: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 782: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 783: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 784: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 785: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 786: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 787: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 788: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 789: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 790: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 791: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 792: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 793: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 794: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 795: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 796: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 797: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 798: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 799: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 800: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 801: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 802: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 803: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 804: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 805: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 806: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 807: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 808: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 809: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 810: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 811: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 812: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 813: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 814: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 815: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 816: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 817: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 818: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 819: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 820: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 821: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 822: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 823: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 824: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 825: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 826: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 827: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 828: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 829: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 830: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 831: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 832: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 833: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 834: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 835: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 836: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 837: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 838: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 839: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 840: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 841: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 842: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 843: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 844: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 845: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 846: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 847: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 848: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 849: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 850: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 851: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 852: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 853: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 854: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 855: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 856: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 857: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 858: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 859: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 860: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 861: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 862: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 863: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 864: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 865: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 866: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 867: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 868: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 869: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 870: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 871: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 872: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 873: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 874: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 875: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 876: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 877: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 878: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 879: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 880: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 881: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 882: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 883: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 884: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 885: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 886: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 887: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 888: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 889: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 890: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 891: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 892: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 893: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 894: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 895: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 896: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 897: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 898: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 899: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 900: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 901: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 902: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 903: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 904: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 905: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 906: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 907: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 908: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 909: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 910: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 911: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 912: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 913: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 914: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 915: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 916: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 917: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 918: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 919: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 920: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 921: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 922: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 923: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 924: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 925: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 926: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 927: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 928: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 929: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 930: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 931: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 932: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 933: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 934: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 935: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 936: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 937: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 938: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 939: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 940: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 941: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 942: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 943: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 944: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 945: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 946: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 947: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 948: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 949: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 950: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 951: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 952: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 953: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 954: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 955: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 956: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 957: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 958: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 959: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 960: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 961: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 962: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 963: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 964: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 965: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 966: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 967: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 968: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 969: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 970: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 971: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 972: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 973: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 974: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 975: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 976: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 977: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 978: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 979: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 980: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 981: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 982: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 983: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 984: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 985: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 986: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 987: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 988: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 989: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 990: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 991: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 992: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 993: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 994: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 995: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 996: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 997: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 998: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 999: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1000: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1001: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1002: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1003: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1004: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1005: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1006: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1007: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1008: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1009: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1010: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1011: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1012: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1013: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1014: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1015: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1016: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1017: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1018: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1019: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1020: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1021: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1022: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1023: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1024: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1025: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1026: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1027: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1028: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1029: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1030: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1031: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1032: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1033: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1034: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1035: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1036: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1037: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1038: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1039: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1040: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1041: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1042: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1043: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1044: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1045: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1046: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1047: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1048: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1049: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1050: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1051: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1052: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1053: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1054: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1055: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1056: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1057: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1058: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1059: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1060: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1061: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1062: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1063: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1064: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1065: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1066: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1067: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1068: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1069: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1070: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1071: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1072: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1073: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1074: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1075: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1076: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1077: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1078: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1079: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1080: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1081: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1082: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1083: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1084: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1085: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1086: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1087: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1088: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1089: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1090: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1091: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1092: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1093: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1094: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1095: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1096: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1097: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1098: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1099: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1100: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1101: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1102: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1103: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1104: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1105: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1106: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1107: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1108: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1109: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1110: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1111: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1112: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1113: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1114: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1115: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1116: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1117: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1118: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1119: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1120: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1121: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1122: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1123: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1124: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1125: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1126: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1127: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1128: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1129: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1130: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1131: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1132: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1133: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1134: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1135: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1136: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1137: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1138: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1139: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1140: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1141: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1142: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1143: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1144: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1145: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1146: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1147: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1148: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1149: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1150: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Iteration 1151: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1152: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1153: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1154: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1155: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1156: 
+Player 0 score: 	30
+Player 1 score: 	18
+
+Iteration 1157: 
+Player 0 score: 	9
+Player 1 score: 	39
+
+Iteration 1158: 
+Player 0 score: 	21
+Player 1 score: 	27
+
+Itera
