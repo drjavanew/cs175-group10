@@ -54,4 +54,10 @@ public class random_Player implements MancalaPlayer {
 		return null;
 	}
 
+	@Override
+	public void reset() {
+		
+		
+	}
+
 }

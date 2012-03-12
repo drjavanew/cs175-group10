@@ -97,6 +97,12 @@ public class MinMaxAB_Player implements MancalaPlayer
 			return null;
 		}
 
+		@Override
+		public void reset() {
+			
+			
+		}
+
 		
 
 }

@@ -56,7 +56,7 @@ public class Herlihy_Player implements MancalaPlayer {
 			if(gs.validMove(i))
 			{
 				MancalaGameState gs_copy = gs.copy().play(i);
-				int tempValue = getMiniMaxABValue(gs_copy, 10, Integer.MIN_VALUE, Integer.MAX_VALUE, player);
+				int tempValue = getMiniMaxABValue(gs_copy, 12, Integer.MIN_VALUE, Integer.MAX_VALUE, player);
 				if( tempValue >= currentValue)
 				{
 					currentValue = tempValue;
@@ -149,4 +149,8 @@ public class Herlihy_Player implements MancalaPlayer {
 		return null;
 	}
 
+	@Override
+	public void reset() {
+	 return;
+	}
 }

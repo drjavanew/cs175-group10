@@ -12,7 +12,7 @@ public interactive_Player (int playerNum) {
 }
 
 public int getMove(MancalaGameState gs) throws Exception {
-    return Integer.parseInt(consoleInput.readLine());
+    return -10;
 }
 
 public Object postGameActions(MancalaGameState gs) {
@@ -32,10 +32,16 @@ public Object postGameActions(MancalaGameState gs) {
     return null;
 }
 
-@Override
+
 public Object actionsBeforeDeletion() {
 	
 	return null;
+}
+
+@Override
+public void reset() {
+	
+	
 }
 
 }

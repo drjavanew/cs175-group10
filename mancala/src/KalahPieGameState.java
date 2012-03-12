@@ -15,7 +15,7 @@ private final int ROW_SETTING = 2;
 private final int COL_SETTING = 6;
 public static final int PIE_MOVE = -1;
 
-private boolean secondPlayerFirstMoveMade;
+boolean secondPlayerFirstMoveMade;
 
 // Constructor
 public KalahPieGameState(int startingStones) {

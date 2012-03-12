@@ -70,7 +70,7 @@ public class RegressionLearning {
 	
 	public RegressionLearning(int playerNum, String filename) {
 		this.player = playerNum;
-		cutoffDepth = 9;
+		cutoffDepth = 10;
 			//read and set weights of each feature from a file.
 			try {
 				String sCurrentLine;
@@ -341,7 +341,7 @@ public class RegressionLearning {
                 currentNode.setValue(Float.NEGATIVE_INFINITY);
 
 	//Check each pit on your side to find the best move. */
-        for (int i = 0; i < 6 ; i++)
+        for (int i = -1; i < 6 ; i++)
                 if (currentNode.getBoard().validMove(i)) {
                         try {
                                 MancalaGameState newBoard = currentNode.getBoard().copy() ;

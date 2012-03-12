@@ -1,0 +1,18 @@
+Herlihy vs group1
+Iteration 1: 
+Player 0 score: 	13
+Player 1 score: 	35
+
+Iteration 2: 
+Player 0 score: 	13
+Player 1 score: 	35
+
+Iteration 3: 
+Player 0 score: 	13
+Player 1 score: 	35
+
+Win = 0
+Loose = 3
+Draw = 0
+=====================================
+
