@@ -51,7 +51,7 @@ public void reset() {
 }
 
 // Accessor functions
-public int CurrentPlayer() { return CurrentPlayer; }  // which player is up next?
+public int CurrentPlayer() { return CurrentPlayer; }  // whose turn?
 public int stonesAt(int x,int y) { return grid[x][y]; } 
 public int rows() { return NUMROW; }                // get the board size
 public int cols() { return NUMCOL; }                //

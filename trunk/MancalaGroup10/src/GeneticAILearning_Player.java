@@ -98,4 +98,9 @@ public class GeneticAILearning_Player implements MancalaPlayer {
 		ai.mutate();
 	}
 
+        @Override
+	public Object actionsBeforeDeletion() {
+		//ai.cleanup();
+		return null;
+	}
 }
