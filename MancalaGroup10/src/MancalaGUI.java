@@ -29,6 +29,8 @@ public class MancalaGUI extends javax.swing.JFrame {
     int stones;
     int currentPlayer;
     
+    boolean firstMove;
+    
 
     public MancalaGUI() {
         initComponents();
@@ -94,7 +96,21 @@ public class MancalaGUI extends javax.swing.JFrame {
         myStore.setText("0");
         unmarkPits();
         enableSide();
-        moveAI.setEnabled(false);
+        
+        if(!player1.equals("interactive")) {
+            moveAI.setEnabled(true);
+            status("Move AI.");
+            //computerMove();
+        }
+        else {
+            moveAI.setEnabled(false);
+            status("Player 1's turn.");
+        }
+        
+        if(player1.equals("interactive") && player2.equals("interactive")) {
+            moveAI.setVisible(false);
+        }
+
     }
     
     //This runnable class is used in a thread to animate the stone moves.
@@ -156,6 +172,8 @@ public class MancalaGUI extends javax.swing.JFrame {
         }
     }
     
+    
+    
     //Set the status at bottom of gui.
     void status(String s) {
         status.setText(s);
@@ -197,6 +215,7 @@ public class MancalaGUI extends javax.swing.JFrame {
 
         } //Endgame actions        
         else {
+            checkEnd();
             gs.printState();
             System.out.println("\nPerforming player 1 post game actions...");
             player[0].postGameActions(gs);
@@ -227,7 +246,6 @@ public class MancalaGUI extends javax.swing.JFrame {
 
     void checkEnd() {
         if (gs.checkEndGame()) {            
-            //this.setEnabled(false);
             if(gs.getScore(0) > gs.getScore(1)) {
                 status(">>> PLAYER 1 WINS! <<<");
             }
@@ -336,7 +354,9 @@ public class MancalaGUI extends javax.swing.JFrame {
             a.setStones(play(pos));
             Thread t = new Thread(a);         
             t.start();
-                        
+            
+            if(gs.CurrentPlayer()+1 == 1) { status("Player 1's turn."); }
+            if(gs.CurrentPlayer()+1 == 2) { status("Player 2's turn."); }
             moveAI.setEnabled(true);
         } catch (Exception ex) {
             Logger.getLogger(MancalaGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -361,16 +381,37 @@ public class MancalaGUI extends javax.swing.JFrame {
             System.out.println(move);
             System.out.println(stones);
             
-            stones = gs.stonesAt(gs.CurrentPlayer(), move); //get the number of stones in the move.            
-            int currentPlayer = gs.CurrentPlayer()+1;                        
-            gs.play(move); //make the move.
+            if(move != -1) {
+                stones = gs.stonesAt(gs.CurrentPlayer(), move); //get the number of stones in the move.
+                int currentPlayer = gs.CurrentPlayer()+1;                        
+                gs.play(move); //make the move.
+                //updateBoard();
+                Animator a = new Animator();
+                a.setPlayer(currentPlayer);
+                a.setStartPoint(move);
+                a.setStones(stones);
+                Thread t = new Thread(a);
+                t.start();
+            }
+            else {
+                status(">> PIE MOVE <<");
+                int currentPlayer = gs.CurrentPlayer()+1;                        
+                gs.play(move); //make the move.
+                updateBoard();
+                moveAI.setEnabled(true);
+                enableSide();
+                //animate(currentPlayer, move);    
+            }
             
-            Animator a = new Animator();
-            a.setPlayer(currentPlayer);
-            a.setStartPoint(move);
-            a.setStones(stones);
-            Thread t = new Thread(a);
-            t.start();
+//            int currentPlayer = gs.CurrentPlayer()+1;                        
+//            gs.play(move); //make the move.
+//            //updateBoard();
+//            Animator a = new Animator();
+//            a.setPlayer(currentPlayer);
+//            a.setStartPoint(move);
+//            a.setStones(stones);
+//            Thread t = new Thread(a);
+//            t.start();
             
         } catch (Exception ex) {
             Logger.getLogger(MancalaGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -386,7 +427,7 @@ public class MancalaGUI extends javax.swing.JFrame {
                 status("Invalid move!"); 
                 return;
             }
-            status("Player " + (gs.CurrentPlayer() + 1) + "'s move: " + move);
+            //status("Player " + (gs.CurrentPlayer() + 1) + "'s move: " + move);
             gs.play(move);
         } catch (Exception ex) {
             Logger.getLogger(MancalaGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -431,7 +472,6 @@ public class MancalaGUI extends javax.swing.JFrame {
         pit4 = new javax.swing.JButton();
         pit5 = new javax.swing.JButton();
         moveAI = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -502,10 +542,10 @@ public class MancalaGUI extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Please select a game option:");
 
-        initialSettingButton.setFont(new java.awt.Font("Tahoma", 1, 14));
+        initialSettingButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         initialSettingButton.setText("Start Game");
         initialSettingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -553,7 +593,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         store.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 51), 3, true));
 
         myStore.setBackground(new java.awt.Color(255, 255, 255));
-        myStore.setFont(new java.awt.Font("Tahoma", 1, 18));
+        myStore.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         myStore.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         myStore.setText("0");
 
@@ -570,14 +610,14 @@ public class MancalaGUI extends javax.swing.JFrame {
             storeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(storeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(myStore, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                .addComponent(myStore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         ostore.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 51), 3, true));
 
         oppStore.setBackground(new java.awt.Color(255, 255, 255));
-        oppStore.setFont(new java.awt.Font("Tahoma", 1, 18));
+        oppStore.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         oppStore.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         oppStore.setText("0");
 
@@ -601,7 +641,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         status.setText("Status Bar.");
 
         opit5.setBackground(new java.awt.Color(255, 255, 255));
-        opit5.setFont(new java.awt.Font("Tahoma", 1, 14));
+        opit5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opit5.setText("7");
         opit5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         opit5.addActionListener(new java.awt.event.ActionListener() {
@@ -611,7 +651,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         });
 
         opit4.setBackground(new java.awt.Color(255, 255, 255));
-        opit4.setFont(new java.awt.Font("Tahoma", 1, 14));
+        opit4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opit4.setText("8");
         opit4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         opit4.addActionListener(new java.awt.event.ActionListener() {
@@ -621,7 +661,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         });
 
         opit3.setBackground(new java.awt.Color(255, 255, 255));
-        opit3.setFont(new java.awt.Font("Tahoma", 1, 14));
+        opit3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opit3.setText("9");
         opit3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         opit3.addActionListener(new java.awt.event.ActionListener() {
@@ -631,7 +671,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         });
 
         opit2.setBackground(new java.awt.Color(255, 255, 255));
-        opit2.setFont(new java.awt.Font("Tahoma", 1, 14));
+        opit2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opit2.setText("10");
         opit2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         opit2.addActionListener(new java.awt.event.ActionListener() {
@@ -641,7 +681,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         });
 
         opit1.setBackground(new java.awt.Color(255, 255, 255));
-        opit1.setFont(new java.awt.Font("Tahoma", 1, 14));
+        opit1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opit1.setText("11");
         opit1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         opit1.addActionListener(new java.awt.event.ActionListener() {
@@ -651,7 +691,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         });
 
         opit0.setBackground(new java.awt.Color(255, 255, 255));
-        opit0.setFont(new java.awt.Font("Tahoma", 1, 14));
+        opit0.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opit0.setText("12");
         opit0.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         opit0.addActionListener(new java.awt.event.ActionListener() {
@@ -671,7 +711,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         });
 
         pit1.setBackground(new java.awt.Color(255, 255, 255));
-        pit1.setFont(new java.awt.Font("Tahoma", 1, 14));
+        pit1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pit1.setText("1");
         pit1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         pit1.addActionListener(new java.awt.event.ActionListener() {
@@ -681,7 +721,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         });
 
         pit2.setBackground(new java.awt.Color(255, 255, 255));
-        pit2.setFont(new java.awt.Font("Tahoma", 1, 14));
+        pit2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pit2.setText("2");
         pit2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         pit2.addActionListener(new java.awt.event.ActionListener() {
@@ -691,7 +731,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         });
 
         pit3.setBackground(new java.awt.Color(255, 255, 255));
-        pit3.setFont(new java.awt.Font("Tahoma", 1, 14));
+        pit3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pit3.setText("3");
         pit3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         pit3.addActionListener(new java.awt.event.ActionListener() {
@@ -701,7 +741,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         });
 
         pit4.setBackground(new java.awt.Color(255, 255, 255));
-        pit4.setFont(new java.awt.Font("Tahoma", 1, 14));
+        pit4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pit4.setText("4");
         pit4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         pit4.addActionListener(new java.awt.event.ActionListener() {
@@ -711,7 +751,7 @@ public class MancalaGUI extends javax.swing.JFrame {
         });
 
         pit5.setBackground(new java.awt.Color(255, 255, 255));
-        pit5.setFont(new java.awt.Font("Tahoma", 1, 14));
+        pit5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pit5.setText("5");
         pit5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 102, 255), 3, true));
         pit5.addActionListener(new java.awt.event.ActionListener() {
@@ -726,8 +766,6 @@ public class MancalaGUI extends javax.swing.JFrame {
                 moveAIActionPerformed(evt);
             }
         });
-
-        jButton1.setText("Pie Move");
 
         jMenu1.setText("File");
 
@@ -758,8 +796,6 @@ public class MancalaGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(status)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(moveAI))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ostore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -828,8 +864,7 @@ public class MancalaGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(status)
-                    .addComponent(moveAI)
-                    .addComponent(jButton1))
+                    .addComponent(moveAI))
                 .addContainerGap())
         );
 
@@ -846,13 +881,13 @@ public class MancalaGUI extends javax.swing.JFrame {
         if (interactiveP1.isSelected()) {
             player1 = "interactive";
         } else {
-            player1 = "AILearning";
+            player1 = "Group10";
         }
 
         if (interactiveP2.isSelected()) {
             player2 = "interactive";
         } else {
-            player2 = "AILearning";
+            player2 = "Group10";
         }
 
         MancalaGUI gui = new MancalaGUI("KalahPie", 4, player1, player2);
@@ -866,14 +901,6 @@ public class MancalaGUI extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(MancalaGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-//        for (int i =1; i<= 100000; i++){
-//            try {
-//                game.play();
-//            } catch (Exception ex) {
-//                Logger.getLogger(MancalaGUI.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
     }//GEN-LAST:event_initialSettingButtonActionPerformed
 
     /***************************************************************************
@@ -1096,13 +1123,17 @@ public class MancalaGUI extends javax.swing.JFrame {
     /**************************************************************************/
 
 private void moveAIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveAIActionPerformed
-// TODO add your handling code here:
 
-    if (!player2.equals("interactive"))
-        computerMove();
-    if (gs.CurrentPlayer()+1 == 1)
+    computerMove();
+
+    //if p1 is computer and its his turn
+    if(player1.equals("interactive") && (gs.CurrentPlayer()+1 == 1)) {
         moveAI.setEnabled(false);
-    
+    }
+    if(player2.equals("interactive") && (gs.CurrentPlayer()+1 == 2)) {
+        moveAI.setEnabled(false);
+    }
+        
     checkEnd();
 }//GEN-LAST:event_moveAIActionPerformed
 
@@ -1127,7 +1158,6 @@ private void moveAIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
     private javax.swing.JButton initialSettingButton;
     private javax.swing.JRadioButton interactiveP1;
     private javax.swing.JRadioButton interactiveP2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
