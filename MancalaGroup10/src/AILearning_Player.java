@@ -1,6 +1,7 @@
+import java.util.Random;
+
 /*
- * author: William Lam
- * author: Andrew Furusawa
+ * 
  * 
  * class name: AILearning_Player
  * description: 
@@ -10,30 +11,90 @@ public class AILearning_Player implements MancalaPlayer {
 	
 	private int player;
 	private int opponent;
+	private double learning_rate;
+	private boolean firstMoveofFirstPlayer = false;
 	
-	RegressionLearning ai;
+	private RegressionLearning ai;
 
 	public AILearning_Player (int playerNum) {
 	  player = playerNum;
 	  opponent = 1 - player;
+	  learning_rate = 0.003;
 	 
 	  // initialize ai and load theta values.
 	  ai = new RegressionLearning(playerNum,"data.txt");
-	 
 	  
 	}
 	
+	/* This function's logic is based on the Mancala game analysis located here:
+     * http://fritzdooley.com/mancala/6_mancala_best_opening_move.html
+     * 
+     * But desired functionality may be changed to personal tastes
+     */
+    boolean[] DesiredFirstMove = { false /* 0 */, false /* 1 */, true /* 2 */,
+                                                             false /* 3 */, false /* 4 */, true /* 5 */ };
+    boolean[] DesiredBonusMove = { false /* 0 */, false /* 1 */, false /* WILL NEVER BE CALLED */,
+                     true /* 3 */, true /* 4 */, true /* 5 */ };
+    
+    public boolean usePieMove(MancalaGameState gs)
+    {
+            boolean takePieMove = false;
+            if(gs.validMove(KalahPieGameState.PIE_MOVE))
+            {
+                    //Determine our test set. If they got a bonus move, use the bonus set, otherwise use first move set.
+                    boolean[] TestSet = ((DesiredFirstMove[2] && gs.stonesAt(opponent, 2) == 1) ? DesiredBonusMove : DesiredFirstMove);
+                    
+                    for(int i = 0; i < 6; i++)
+                    {
+                            if(TestSet[i] && gs.stonesAt(opponent, i) == 0)
+                            {
+                                    takePieMove = true;
+                                    break;
+                            }
+                    }
+                    
+            }
+            return takePieMove;
+    }
+
+	
+		
+		
+		
+		
+		
+		
+	
+
+		
+	
 	public int getMove(MancalaGameState gs) throws Exception {
 
-		ai.board = gs.copy();
+		ai.updateHistory(gs.copy());
+		
+		if((player == 1) && (usePieMove(gs))) {
+            return -1;
+		}
+		
+		if ((player== 0) && (ai.isNew())) {
+			if (firstMoveofFirstPlayer == false) {
+			    firstMoveofFirstPlayer = true;
+			    return 2;
+			}
+			else {
+				firstMoveofFirstPlayer = false;
+				Random rand = new Random();
+				int val = rand.nextInt(10);
+				if (val >=5) return 1;
+				else return 3;
+			}
+			 
+			
+		}
+		
 		int bestMove = -1;
 		Node evalNode = new Node(gs.copy(), 0);
 		bestMove = ai.findBestMove(evalNode, bestMove);
-		
-		if (bestMove != -1) {
-			RegressionState aState = new RegressionState(gs.copy(),player);
-			ai.updateHistory(aState);
-		}
 		 
 		return bestMove;
 	
@@ -48,36 +109,38 @@ public class AILearning_Player implements MancalaPlayer {
 //	    Make a copy to compute the final score
 	    MancalaGameState gsCopy = gs.copy();
 	    gsCopy.computeFinalScore();
-	    RegressionState aState = new RegressionState(gsCopy,player);
-		ai.updateHistory(aState);
+	   
+		ai.updateHistory(gsCopy);
 		ai.incGamesPlayed();
+		int finalscore = gsCopy.getScore(player)-gsCopy.getScore(opponent);
+		ai.setReward(finalscore);
 		
-	    if (gsCopy.getScore(player) > gsCopy.getScore(1-player)) {
-	        ai.setReward(gsCopy.getScore(player)-gsCopy.getScore(1-player));
-	        System.out.printf("Win \t ");
+	    if (finalscore > 0) {
+	        System.out.printf("AILearn Win \n ");
 	    }
-	    else if (gsCopy.getScore(player) < gsCopy.getScore(1-player)) {
-	        ai.setReward(gsCopy.getScore(player)-gsCopy.getScore(1-player));
-	        System.out.printf("Loose \t ");
+	    else if (finalscore < 0) {
+	       
+	        System.out.printf("AILearn Loose \t\n ");
 	    }
 	    else  {
-	        ai.setReward(0);
-	        System.out.printf("Draw \t ");
+	        System.out.printf("Draw \t\n ");
 	    }
-	    if (ai.getGamesPlayed()==1) {
+	    
+	    if  (ai.hasNoSample()) {
 	    	ai.saveSample();
 	    }
 	    
-	    ai.gradientDescent((double)0.01/ai.getGamesPlayed());
+	    ai.gradientDescent((double)learning_rate/ai.getGamesPlayed());
 //	    ai.printThetas(ai.getWeight());
-//	    ai.addTotalHistory();
-	    ai.reset();
 	    ai.checkEvalFunction();
-//	    if(ai.getGamesPlayed()==100) {
-//	    	ai.checkLeantFucntion();
-//	    }
-	    ai.saveThetas("data.txt");
+	    ai.reset();
 	    return null;
+	}
+
+	@Override
+	public Object actionsBeforeDeletion() {
+		ai.saveThetas("data.txt");
+		return null;
 	}
 
 }

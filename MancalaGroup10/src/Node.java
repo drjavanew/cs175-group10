@@ -1,3 +1,6 @@
+/* Represent the node in tree structure to search for best move using MinMax
+ * Alpha Beta
+ */
 import java.util.Vector;
 
 public class Node {
@@ -14,7 +17,6 @@ public class Node {
 		this.depth = depthVal;
 		this.parent = null;
 		this.children = new Vector<Node>();
-
 	}
 
 	public int getId() {
@@ -69,6 +71,7 @@ public class Node {
 					children.remove(a);
 					return;
 				}
+
 	}
 
 	public void setChild(Node aNode, int childId) {

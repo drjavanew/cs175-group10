@@ -21,22 +21,43 @@ public class RegressionLearning {
 	private static final int TOTAL_FEATURES = 7+1; //# of features + 1 constant.
 	
 	int player;
-	static int reward;
-	static int cutoffDepth; //search depth
+	int reward;
+	
+	int preGame;
+	int nowGame;
+	
+	// these are used to break out of looping looses
+	boolean signal = false; 
+	boolean firstSol = false;
+	boolean secondSol = false;
+	
+	int cutoffDepth; //search depth
 	/*
 	 * Game History contains each state of a turn within a single game.
 	 */
 	ArrayList<RegressionState> gameHistory = new ArrayList<RegressionState>();
 	
-	// these are to verify the cost function and learning rate 
-	ArrayList<ArrayList<RegressionState>> TotalHistory = new ArrayList<ArrayList<RegressionState>>();
+	// these are to verify the cost function and adjust learning rate 
 	ArrayList<RegressionState> sampleHistory = new ArrayList<RegressionState>();
+	int sampleReward;
+	
+	// might need these for checking difference type of games later
+	ArrayList<RegressionState> firstDraw = new ArrayList<RegressionState>();
+	ArrayList<RegressionState> firstLoose = new ArrayList<RegressionState>();
+	ArrayList<RegressionState> firstWin = new ArrayList<RegressionState>();
+	int rWin;
+	int rLoose;
+	int rDraw;
 	
 	/* other */
 	public double[] weight = new double[TOTAL_FEATURES]; //a.k.a. list of theta value.
-
-	MancalaGameState board;
+	double[] copy = new double[TOTAL_FEATURES]; // value of weight before learning new weight
+	
+	
+	double[] recentWin = new double[TOTAL_FEATURES]; // the most recent value of weight that leads to a win
+	
 	int gamesPlayed = 0;
+	int instance_gamesPlayed = 0;
 	
 	
 	
@@ -49,7 +70,7 @@ public class RegressionLearning {
 	
 	public RegressionLearning(int playerNum, String filename) {
 		this.player = playerNum;
-		cutoffDepth = 8;
+		cutoffDepth = 9;
 			//read and set weights of each feature from a file.
 			try {
 				String sCurrentLine;
@@ -76,14 +97,18 @@ public class RegressionLearning {
 			}
 		}
 	
+	
+	
 	/* Sets the reward value to win or loss. */
 	public void setReward(int value) {
 		reward = value;
+		nowGame = reward;
 	}
 	
 	/* Increment the number of games played by one. */
 	public void incGamesPlayed() {
 		gamesPlayed ++;
+		instance_gamesPlayed ++;
 	}
 
 	/* Get number total of games played. */
@@ -93,6 +118,7 @@ public class RegressionLearning {
 	
 	/* Reset the current game. */
 	public void reset() {
+		preGame = reward;
 		gameHistory.clear();
 	}
 	
@@ -111,75 +137,127 @@ public class RegressionLearning {
 	}
 	
 	/* Save a copy of the current game history. */
+	@SuppressWarnings("unchecked")
 	public void saveSample() {
-		sampleHistory = (ArrayList<RegressionState>) gameHistory.clone();
+		if (reward >0) {
+			if (firstWin.isEmpty()) {
+				firstWin = (ArrayList<RegressionState>) gameHistory.clone();
+				rWin = reward; 
+			}
+		}
+		else if (reward < 0) {
+			if (firstLoose.isEmpty()) {
+				firstLoose = (ArrayList<RegressionState>) gameHistory.clone();
+				rLoose = reward;
+			}
+		}
+		else {
+			if (firstDraw.isEmpty()) {
+				firstDraw = (ArrayList<RegressionState>) gameHistory.clone();
+				rDraw = reward;
+			}
+		}
+			
 	}
 	
-	public double costFunction() {
+	public boolean hasNoSample() {
+		return firstWin.isEmpty() || firstLoose.isEmpty() || firstDraw.isEmpty();
+	}
+	
+	
+	public double costFunction(ArrayList<RegressionState> sample, double[] weightValue, double reward) {
 		double sumAll =0;
 		double total  = 0;
-		Iterator<RegressionState> it = sampleHistory.iterator();	
+		Iterator<RegressionState> it = sample.iterator();	
 		while (it.hasNext()) {
 			RegressionState aState = it.next();
-			sumAll = predictedValue (aState, weight);
+			sumAll = predictedValue (aState, weightValue);
 			sumAll -= reward;
 			total += sumAll*sumAll;
-
-			
-			
 		} //end while
 		return total;
 	}
-
-	/* Add current game to a the history of all games played. */
-	public void addTotalHistory() {
-		ArrayList<RegressionState> elem = (ArrayList<RegressionState>) gameHistory.clone();
-		TotalHistory.add(elem);
-	}
+	
+	
 	
       /* Prints out the value of the cost function. */
 	public void checkEvalFunction(){
-		System.out.println(costFunction());
-	}
-	
-	public void checkLeantFucntion() {
-		Iterator<ArrayList<RegressionState>> it = TotalHistory.iterator();
-		while (it.hasNext()) {
-			Iterator<RegressionState> myit = it.next().iterator();
-			System.out.println(errorValue(myit));
+		
+		double preCostValue;
+		double nowCostValue;
+		double currentPreCostValue = costFunction(gameHistory,copy,reward);
+		double currentNowCostValue = costFunction(gameHistory,weight,reward);
+		if (reward >0) {
+		nowCostValue = costFunction(firstWin,weight,rWin);
+		preCostValue = costFunction(firstWin,copy,rWin);
 		}
+		else if (reward <0) {
+			nowCostValue = costFunction(firstLoose,weight,rLoose);
+			preCostValue = costFunction(firstLoose,copy,rLoose);
+		}
+		else {
+			nowCostValue = costFunction(firstDraw,weight,rDraw);
+			preCostValue = costFunction(firstDraw,copy,rDraw);
+		}
+//		System.out.println();
+//		System.out.println("Current game value with copy    = " + costFunction(gameHistory,copy,reward));
+//		System.out.println("Current game value with learnt  = " + costFunction(gameHistory,weight,reward));
+//		System.out.println("Pre Value= " + preCostValue);
+//		System.out.println("Now Value= " + nowCostValue);
+//		System.out.println("Pre Game= " + preGame);
+//		System.out.println("Now Gamee= " + nowGame);
+		
+		if ((preGame == 0 ) || (nowGame ==0)) {
+			return;
+		}
+		
+		if (preGame < 0) {
+			if (nowGame > 0) {
+				copyArr(copy,recentWin);
+			}
+			else {
+				if (preGame == nowGame) { // loose after loose by same margin
+					if (signal == false) {
+						firstLoose.clear();
+						saveSample(); // save current game as sample of first Loose
+						signal = true;
+						return;
+					}
+					else {
+						if ((preCostValue == currentPreCostValue) && 
+								(nowCostValue == currentNowCostValue)) { // same game detected 
+							if (firstSol == false) {
+								gamesPlayed = 1;
+								firstSol = true;
+								return;
+							}
+							else {
+								copyArr(recentWin,weight);
+								gamesPlayed *= 2;
+								if (secondSol== false) {
+									secondSol = true;
+									return;}
+								
+								else {
+							 //reset everything - re-learn from beginning
+								gamesPlayed = 0;
+								weight = new double[TOTAL_FEATURES];
+								signal = false;
+								firstSol = false;
+								secondSol = false;
+							}
+						}
+					}
+						else {
+							signal = false;
+						}
+					
+				}
+			}
+		}
+		
 	}
-	
-	
-	public double errorValue(Iterator<RegressionState> it) {
-		double sumAll =0;
-		double total  = 0;
-		while (it.hasNext()) {
-			RegressionState aState = it.next();
-			sumAll = predictedValue (aState, weight);
-			sumAll -= reward;
-			total += sumAll*sumAll;
-		} //end while
-		return total;
-	}
-	
-	
-	/* Returns the square of error value. */
-	public double errorValue() {
-		double sumAll =0;
-		double total  = 0;
-		Iterator<RegressionState> it = gameHistory.iterator();	
-		while (it.hasNext()) {
-			RegressionState aState = it.next();
-			sumAll = predictedValue (aState, weight);
-			sumAll -= reward;
-			total += sumAll*sumAll;
-
-			
-			
-		} //end while
-		return total;
-	}
+		}
 	
 	public void printThetas(double[] myValues) {
 		for (int i = 0; i < myValues.length; i++) {
@@ -200,9 +278,7 @@ public class RegressionLearning {
 					s = String.valueOf(weight[j])+ "\n";
 					bw.write(s);
 			}
-			
 			bw.close();
-			    
 		}   
 			 
 		catch (IOException e) {
@@ -210,18 +286,15 @@ public class RegressionLearning {
 		}
 	}
 	
-	public void copyArr (double[] original, double[] copy) {
-		for (int i = 0; i < original.length; i++) {
-			copy[i] = original[i]; 
+	public void copyArr (double[] originalArr, double[] copyArr) {
+		for (int i = 0; i < originalArr.length; i++) {
+			copyArr[i] = originalArr[i]; 
 		}
 	}
-	
-	
 	
 	/* calculate the gradient descent. */
 	public void gradientDescent(double stepsize) {
 		
-		double[] copy = new double[TOTAL_FEATURES];
 		copyArr(weight,copy);
 		
 		int i = 0;
@@ -236,10 +309,7 @@ public class RegressionLearning {
 				sumAll = predictedValue (aState, copy);
 				sumAll -= reward;
 
-				
 				sumTotal += sumAll * aState.getFeature(i);
-				
-				
 			} //end inner while
 			
 			weight[i] = copy[i] - stepsize*((double) 1/gameHistory.size())* sumTotal;
@@ -249,16 +319,10 @@ public class RegressionLearning {
 	}
 	
 
-	public double evalFunction (RegressionState state) {
-		double value = weight[0];
-		for (int i = 1; i< TOTAL_FEATURES; i++) {
-			value += weight[i] * state.getFeature(i);
-		}
-		return value;
-			
-	}
-	public void updateHistory(RegressionState state) {
-		gameHistory.add(state);
+	public void updateHistory(MancalaGameState gs) {
+		
+		RegressionState aState = new RegressionState(gs.copy(),player);
+		gameHistory.add(aState);
 	}
 	
 	/* Gets the list of weights */
@@ -299,7 +363,7 @@ public class RegressionLearning {
                                                 || (newNode.getDepth() >= cutoffDepth)) {
 
                                 		RegressionState aState = new RegressionState(newNode.getBoard(),player);
-                                        newNode.setValue(evalFunction(aState));
+                                        newNode.setValue(predictedValue(aState,weight));
 
                                 } else
                                         findBestMove(newNode,best);
@@ -363,6 +427,14 @@ public class RegressionLearning {
                 }
         return best; //return the best move
 }
+
+
+
+	public boolean isNew() {
+		if (gameHistory.size() <=2) 
+			return true;
+			else return false;
+	}
 
 	
 }

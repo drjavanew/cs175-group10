@@ -32,4 +32,10 @@ public Object postGameActions(MancalaGameState gs) {
     return null;
 }
 
+@Override
+public Object actionsBeforeDeletion() {
+	
+	return null;
+}
+
 }

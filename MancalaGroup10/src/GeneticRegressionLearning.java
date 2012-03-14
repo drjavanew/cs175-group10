@@ -387,17 +387,17 @@ public class GeneticRegressionLearning {
 			if (mutationChoice == 0)
 			{
 			//	System.out.print(weight[choice]);
-				weight[choice] += (double)ran.nextInt(1000000) / 1000000000;
+				weight[choice] += (double)ran.nextInt(1000000) / 100000000;
 			//	System.out.println("mutate to " + weight[choice]);
 			}
 			else if (mutationChoice == 1)
-				weight[choice] -= (double)ran.nextInt(1000000) / 1000000000;
+				weight[choice] -= (double)ran.nextInt(1000000) / 100000000;
 			else if (mutationChoice == 2)
 				weight[choice] *= -1;
 			else if (mutationChoice == 3)
-				weight[choice] *= ran.nextInt(20000000) / 100000000;
+				weight[choice] += ran.nextInt(20000000) / 100000000;
 			else if (mutationChoice == 4 && loop == 0)
-				weight[choice] = 0;
+				weight[choice] += (double)ran.nextInt(1000000) / 1000000000;
 		}
 			
 			
