@@ -1,5 +1,7 @@
 
 import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.lang.reflect.Constructor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -252,8 +254,13 @@ public class MancalaGUI extends javax.swing.JFrame {
             else {
                 status(">>> PLAYER 2 WINS! <<<");
             }
+            
+            player[0].postGameActions(gs);
+            player[1].postGameActions(gs);
+            player[0].actionsBeforeDeletion();
+            player[1].actionsBeforeDeletion();
         }
-        
+
     }
     
     /** mark(player, pit num, color) */
@@ -378,8 +385,8 @@ public class MancalaGUI extends javax.swing.JFrame {
                 move = player[gs.CurrentPlayer()].getMove(gs);
             }
             
-            System.out.println(move);
-            System.out.println(stones);
+            //System.out.println(move);
+            //System.out.println(stones);
             
             if(move != -1) {
                 stones = gs.stonesAt(gs.CurrentPlayer(), move); //get the number of stones in the move.
@@ -399,8 +406,7 @@ public class MancalaGUI extends javax.swing.JFrame {
                 gs.play(move); //make the move.
                 updateBoard();
                 moveAI.setEnabled(true);
-                enableSide();
-                //animate(currentPlayer, move);    
+                enableSide();   
             }
             
 //            int currentPlayer = gs.CurrentPlayer()+1;                        
@@ -881,13 +887,13 @@ public class MancalaGUI extends javax.swing.JFrame {
         if (interactiveP1.isSelected()) {
             player1 = "interactive";
         } else {
-            player1 = "Group10";
+            player1 = "AILearning";
         }
 
         if (interactiveP2.isSelected()) {
             player2 = "interactive";
         } else {
-            player2 = "Group10";
+            player2 = "AILearning";
         }
 
         MancalaGUI gui = new MancalaGUI("KalahPie", 4, player1, player2);
