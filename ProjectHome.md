@@ -1,0 +1,1 @@
+ai that learns to play mancala using optimal moves.
